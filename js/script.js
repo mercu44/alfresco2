@@ -184,3 +184,18 @@ async function enviarReserva(e){
     }
 
 }
+
+
+/*
+const cookie = document.getElementById("cookies");
+if(localStorage.getItem("cookieAceptadas") ==="true"){
+    cookie.style.display="none";
+}
+document.getElementById("cerrar").addEventListener("click", function(){
+    cookie.style.display ="none";
+})
+document.getElementById("aceptar").addEventListener("click", function(){
+    cookie.style.display="none";
+    localStorage.setItem("cookiesAceptadas", "true");
+})
+    */
