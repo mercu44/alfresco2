@@ -1,0 +1,63 @@
+/*==================================================
+                    ANIMATIONS
+==================================================*/
+
+@keyframes heroZoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes scroll{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+        opacity:0;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translate(-50%,18px);
+
+        opacity:0;
+
+    }
+
+}
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:none;
+
+}

@@ -1,0 +1,288 @@
+/*==================================================
+                    CARTA
+==================================================*/
+
+/* Fondo fijo */
+.header.scrolled{
+
+    background: transparent !important;
+    backdrop-filter: none;
+    box-shadow: none;
+    border-bottom: none;
+
+}
+.menu-background{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("../fotos/fotos/foto4.jpg") center center/cover no-repeat;
+
+    z-index: -2;
+
+}
+
+/* Sección */
+
+#menu-section{
+
+    position: relative;
+
+    padding: 140px 0 120px;
+
+}
+
+/* Título */
+
+#menu-section h1{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:5rem;
+
+    font-weight:400;
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+/* Contenedor */
+
+#menu-container{
+
+    width:min(900px,90%);
+
+    margin:auto;
+
+    padding: 0 70px 70px 70px;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:12px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/*==================================================
+                CATEGORÍAS
+==================================================*/
+
+.categoria{
+
+    margin-bottom:90px;
+
+}
+
+.categoria:last-child{
+
+    margin-bottom:0;
+
+}
+
+.categoria h2{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:3.5rem;
+
+    font-weight:400;
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:60px;
+
+    position:relative;
+
+}
+
+.categoria h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:20px auto 0;
+
+}
+
+/*==================================================
+                    PLATOS
+==================================================*/
+
+.plato{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:35px;
+
+    padding:30px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    transition:.3s;
+
+}
+
+.plato:last-child{
+
+    border-bottom:none;
+
+}
+
+.plato:hover{
+
+    transform:translateX(8px);
+
+}
+
+/*==================================================
+                    TEXTO
+==================================================*/
+
+.plato div{
+
+    flex:1;
+
+}
+
+.plato h3{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    color:white;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+
+}
+
+.plato:hover h3{
+
+    color:var(--gold);
+
+}
+
+.plato p{
+
+    color:#d4d4d4;
+
+    line-height:1.7;
+
+    max-width:620px;
+
+}
+
+/*==================================================
+                    PRECIO
+==================================================*/
+
+.plato span{
+
+    min-width:90px;
+
+    text-align:right;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    color:var(--gold);
+
+    white-space:nowrap;
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    #menu-section{
+
+        padding:120px 0 80px;
+
+    }
+
+    #menu-section h1{
+
+        font-size:3.3rem;
+
+        margin-bottom:45px;
+
+    }
+
+    #menu-container{
+
+        width:92%;
+
+        padding:35px 25px;
+
+    }
+
+    .categoria{
+
+        margin-bottom:70px;
+
+    }
+
+    .categoria h2{
+
+        font-size:2.5rem;
+
+        margin-bottom:40px;
+
+    }
+
+    .plato{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .plato span{
+
+        text-align:left;
+
+    }
+
+    .plato h3{
+
+        font-size:1.7rem;
+
+    }
+
+}

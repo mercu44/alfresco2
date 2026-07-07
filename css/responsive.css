@@ -1,0 +1,524 @@
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+
+/*=========================================
+            1200px DESKTOP
+=========================================*/
+
+@media (max-width:1200px){
+
+    .header{
+        padding:25px 40px;
+    }
+
+    .header.scrolled{
+        padding:18px 40px;
+    }
+
+    .navbar{
+        gap:28px;
+    }
+
+    .hero h1{
+        font-size:5rem;
+    }
+
+}
+
+
+/*=========================================
+            992px  IPHONE 17
+=========================================*/
+
+@media (max-width:992px){
+    
+    section{
+        padding:90px 0;
+    }
+
+    /* HEADER */
+
+    .navbar{
+        display:none;
+    }
+
+    .header{
+        width: 100%;
+        padding:15px 20px;
+
+
+    }
+
+    .header.scrolled{
+        padding:18px 30px;
+    }
+
+    .logo-image{
+        height:55px;
+    }
+    .btn-reserva{
+        display: none;
+    }
+    
+
+    /* HERO */
+
+    .hero{
+        height:90vh;
+        padding:0 30px;
+    }
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .hero p{
+        font-size:1.2rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        margin-top:90px;
+
+        gap:20px;
+    }
+    .hero-content{
+
+        position:relative;
+    
+        z-index:2;
+    
+        height:100%;
+    
+        width:100%;
+    
+        display:flex;
+    
+        flex-direction:column;
+    
+        align-items:center;
+    
+        text-align:center;
+    
+        padding:120px 20px 50px;
+    
+    }
+    .hero-text{
+
+        margin:auto 0;
+    
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid{
+
+        display:flex;
+        flex-direction:column;
+        
+
+        gap:45px;
+
+    }
+
+    .experience-image{
+
+        width:100%;
+        height:500px;
+
+    }
+
+    .experience-image img{
+
+        width:100%;
+        height:100%;
+        object-fit:cover;
+
+    }
+
+    /* CUISINE */
+
+    .cuisine-grid{
+
+        display:flex;
+        flex-direction:column;
+
+        gap:45px;
+
+    }
+
+    .cuisine-image{
+
+        width:100%;
+        height:500px;
+
+    }
+
+    .cuisine-image img{
+
+        width:100%;
+        height:100%;
+        object-fit:cover;
+
+    }
+
+    /* GALLERY */
+
+    .gallery{
+
+        display:flex;
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .gallery-item,
+    .large,
+    .wide{
+
+        width:100%;
+        height:420px;
+
+    }
+    /* INSTAGRAM */
+
+    .instagram{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        gap:40px;
+    }
+
+    /* RESTAURANT */
+
+    .restaurant-gallery{
+
+        display:flex;
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .restaurant-gallery div{
+
+        width:100%;
+        height:420px;
+
+    }
+
+    .restaurant-gallery img{
+
+        width:100%;
+        height:100%;
+        object-fit:cover;
+
+    }
+
+    /* FULL IMAGE */
+
+    .fullscreen-image{
+
+        height:55vh;
+
+    }
+
+    .fullscreen-overlay h2{
+
+        width:90%;
+        font-size:3rem;
+
+    }
+
+    /* MENU */
+
+    .menu-content h2{
+
+        font-size:3rem;
+
+    }
+    footer .container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    }
+   
+    .footer-logo{
+        width:100%;
+        margin:auto;
+    }
+   
+    .language-menu{
+
+        opacity:0;
+    
+        visibility:hidden;
+    
+        transform:translateY(10px);
+    
+    }
+    .language-menu.active{
+    
+        opacity:1;
+    
+        visibility:visible;
+    
+        transform:translateY(0);
+    
+    }
+}
+
+
+/*=========================================
+            768px  MOVIL PEQUEÑO
+=========================================*/
+
+@media (max-width:768px){
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .hero{
+
+        padding:0 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+        line-height:1.05;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .subtitle{
+
+        font-size:.8rem;
+        letter-spacing:4px;
+
+    }
+
+    .hero-buttons{
+
+        width:100%;
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+    .section-title{
+
+        margin-bottom:55px;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .experience-grid{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    
+        gap:90px;
+    }
+    
+    .experience-text p,
+    .cuisine-text p{
+
+        font-size:1.2rem;
+
+    }
+
+    .experience-image,
+    .cuisine-image{
+
+        height:360px;
+
+    }
+
+    .gallery-item{
+
+        height:300px;
+
+    }
+
+    .restaurant-gallery div{
+
+        height:300px;
+
+    }
+
+    .fullscreen-image{
+
+        height:45vh;
+
+    }
+
+    .fullscreen-overlay h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .quote{
+
+        padding:120px 0;
+
+    }
+
+    .quote h2{
+
+        font-size:2.5rem;
+
+    }
+
+    .menu-section{
+
+        height:65vh;
+
+    }
+
+    .menu-content h2{
+
+        font-size:2.5rem;
+
+    }
+
+    .reservation form{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .reservation textarea,
+    .reservation button{
+
+        grid-column:span 1;
+
+    }
+
+    footer .container{
+
+        flex-direction:column;
+        text-align:center;
+        gap:35px;
+
+    }
+
+    .footer-links{
+
+        align-items:center;
+
+    }
+
+}
+
+
+/*=========================================
+            576px
+=========================================*/
+
+@media (max-width:576px){
+
+    .hero{
+
+        height:100vh;
+
+    }
+
+    .hero h1{
+
+        font-size:2.35rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .experience-text p,
+    .cuisine-text p{
+
+        font-size:1.05rem;
+
+    }
+
+    .experience-image,
+    .cuisine-image{
+
+        height:280px;
+
+    }
+
+    .gallery-item{
+
+        height:220px;
+
+    }
+
+    .restaurant-gallery div{
+
+        height:220px;
+
+    }
+
+    .fullscreen-image{
+
+        height:35vh;
+
+    }
+
+    .fullscreen-overlay h2{
+
+        font-size:2rem;
+
+    }
+
+    .quote h2{
+
+        font-size:2rem;
+
+    }
+
+    .menu-content h2{
+
+        font-size:2rem;
+
+    }
+
+    .scroll-indicator{
+
+        display:none;
+
+    }
+
+}

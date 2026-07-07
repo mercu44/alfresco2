@@ -1,0 +1,430 @@
+/*==================================================
+                EXPERIENCE
+==================================================*/
+
+.experience{
+    background:var(--sand);
+    color: var(--dark);
+ 
+}
+
+.experience-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+
+    gap:90px;
+}
+
+.experience-text{
+    max-width:520px;
+}
+
+.experience-text p{
+
+    color: var(--dark);
+
+    font-size:1.6rem;
+
+    line-height:2;
+
+    margin-bottom:28px;
+
+}
+
+.experience-image{
+
+    overflow:hidden;
+    aspect-ratio: 4/5;
+    height:auto;
+
+    border-radius:4px;
+
+}
+
+.experience-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1.2s;
+
+}
+
+.experience-image:hover img{
+
+    transform:scale(1.08);
+
+}
+/*==================================================
+                    GALLERY
+==================================================*/
+
+.gallery{
+
+    width:92%;
+
+    max-width:1600px;
+
+    margin:160px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:25px;
+    background:var(--cream);
+
+}
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:6px;
+
+    position:relative;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.gallery-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(transparent,
+            rgba(0,0,0,.15));
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.gallery-item:hover::after{
+
+    opacity:1;
+
+}
+
+.large{
+
+    grid-column:span 7;
+
+    height:720px;
+
+}
+
+.gallery-item:nth-child(2){
+
+    grid-column:span 5;
+
+    height:720px;
+
+}
+
+.gallery-item:nth-child(3){
+
+    grid-column:span 4;
+
+    height:420px;
+
+}
+
+.wide{
+
+    grid-column:span 8;
+
+    height:420px;
+
+}
+/*==================================================
+                CUISINE
+==================================================*/
+
+.cuisine{
+    background: var(--olive);
+}
+
+.cuisine-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+
+    gap:120px;
+}
+
+.cuisine-image{
+    overflow:hidden;
+    border-radius:4px;
+    height:700px;
+}
+
+.cuisine-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+.cuisine-image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.section-title span{
+
+    display:block;
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+
+}
+
+.reservas-title  h2{
+    color: var(--cream);
+
+    font-size:4rem;
+    margin-bottom:35px;
+
+}
+
+.cuisine-text p{
+
+    color: var(--cream);
+
+    font-size:1.6rem;
+
+    line-height:2;
+
+    margin-bottom:30px;
+
+}
+
+
+/*==================================================
+            INSTAGRAM
+==================================================*/
+
+.instagram{
+    display:flex;
+    flex-direction: row;
+    gap:40px;
+    margin: 60px;
+}
+
+
+
+/*==================================================
+                RESTAURANT
+==================================================*/
+
+.restaurant{
+
+    background:var(--stone);
+
+}
+
+.restaurant-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    grid-auto-rows:280px;
+
+    gap:20px;
+
+}
+
+.restaurant-gallery div{
+
+    overflow:hidden;
+
+    border-radius:6px;
+
+    position:relative;
+
+}
+
+.restaurant-gallery img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+.restaurant-gallery img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.restaurant-gallery div:nth-child(1){
+
+    grid-column:span 5;
+    grid-row:span 2;
+
+}
+
+.restaurant-gallery div:nth-child(2){
+
+    grid-column:span 3;
+
+}
+
+.restaurant-gallery div:nth-child(3){
+
+    grid-column:span 4;
+
+}
+
+.restaurant-gallery div:nth-child(4){
+
+    grid-column:span 4;
+
+}
+
+.restaurant-gallery div:nth-child(5){
+
+    grid-column:span 3;
+
+}
+
+.restaurant-gallery div:nth-child(6){
+
+    grid-column:span 5;
+
+}
+.restaurant-gallery div:nth-child(7){
+
+    grid-column:span 7;
+
+}
+
+
+/*==================================================
+                    MENU
+==================================================*/
+
+.menu-section{
+
+    position:relative;
+
+    height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+    color: var(--white)
+
+}
+
+.menu-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:url("../fotos/fotos/comida1.jpg") center/cover;
+
+    transform:scale(1.08);
+
+    transition:8s;
+
+}
+
+.menu-section:hover::before{
+
+    transform:scale(1);
+
+}
+
+.menu-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+.menu-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+}
+
+.menu-content span{
+
+    display:block;
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.menu-content h2{
+
+    font-size:4.5rem;
+
+    width:min(850px,90%);
+
+    margin:auto;
+
+    margin-bottom:50px;
+
+}
