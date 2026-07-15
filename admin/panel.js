@@ -1,5 +1,6 @@
-const API = "/api";
-
+const API = window.location.hostname === "localhost"
+    ? "http://localhost:3000/api"
+    : "/api";
 const token = localStorage.getItem("token");
 
 if (!token) {
