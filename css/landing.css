@@ -242,13 +242,13 @@
 ==================================================*/
 
 .instagram{
-    display:flex;
-    flex-direction: row;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap:40px;
     margin: 60px;
 }
 .instagram-item{
-    height: 650px;
+    aspect-ratio: 2.5/5;
     overflow: hidden;
 }
 .instagram-media{

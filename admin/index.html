@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel de administración · Alfresco</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1>Panel de administración · Alfresco</h1>
+
+        <button id="cerrarSesion">
+            Cerrar sesión
+        </button>
+
+    </header>
+
+    <main>
+
+        <!-- ========================= -->
+        <!-- CALENDARIO -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Calendario</h2>
+
+            <div class="bloque">
+
+                <h3>Añadir día cerrado</h3>
+
+                <form id="formFecha">
+
+                    <input
+                        type="date"
+                        id="fechaCierre"
+                        required
+                    >
+
+                    <button type="submit">
+                        Añadir
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="bloque">
+
+                <h3>Añadir hora no disponible</h3>
+
+                <form id="formHora">
+
+                    <input
+                        type="date"
+                        id="fechaHora"
+                        required
+                    >
+
+                    <input
+                        type="time"
+                        id="horaCierre"
+                        required
+                    >
+
+                    <button type="submit">
+                        Añadir
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="bloque">
+
+                <h3>Días cerrados</h3>
+
+                <div id="listaDias"></div>
+
+            </div>
+
+            <div class="bloque">
+
+                <h3>Horas bloqueadas</h3>
+
+                <div id="listaHoras"></div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- CARTA -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Carta</h2>
+            <form id="formIdioma">
+                <select id="idioma">
+
+                            <option value="es">Español</option>
+
+                            <option value="ca">Catalán</option>
+
+                            <option value="en">Inglés</option>
+
+                            <option value="fr">Francés</option>
+
+                </select>
+            </form>
+
+            <div class="bloque">
+
+                <h3>Crear plato</h3>
+
+                <form id="formPlato">
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Nombre"
+                        required
+                    >
+
+                    <textarea
+                        id="descripcion"
+                        placeholder="Descripción"
+                    ></textarea>
+
+                    <input
+                        type="number"
+                        id="precio"
+                        placeholder="Precio"
+                        step="0.01"
+                        required
+                    >
+                    <input
+                        type="text"
+                        id="categoria"
+                        placeholder="Categoria (En el idioma)"
+                        required
+                    >
+
+
+                    <button type="submit">
+                        Guardar plato
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="bloque">
+
+                <h3>Importar carta</h3>
+                 <input
+                    type="file"
+                    id="archivoCarta"
+                    accept=".json"
+                    hidden
+                >
+                <button id="importarCarta">
+                    Importar carta
+                </button>
+
+            </div>
+            <div class="bloque">
+
+                <h3>Borrar TODA la carta</h3>
+
+                <button id="borrarCarta">
+                    BORRAR 
+                </button>
+
+            </div>
+
+            <div class="bloque">
+
+                <h3>Platos actuales</h3>
+
+                <div id="listaPlatos"></div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- RESERVAS -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Reservas</h2>
+
+            <div id="listaReservas">
+
+                <p>No hay reservas.</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="panel.js"></script>
+
+</body>
+
+</html>

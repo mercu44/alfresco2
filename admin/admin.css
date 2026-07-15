@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f0ea;
+}
+
+main {
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background-image: url("../fotos/fotos/restaurante4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* La imagen queda fija */
+
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+
+section {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.card {
+
+    background-color: rgba(250, 246, 240, 0.96);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+    border-top: 6px solid #c86b45;
+}
+
+h1 {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #141414;
+
+    font-size: 42px;
+
+    letter-spacing: 2px;
+}
+
+h2 {
+
+    margin: 0;
+
+    padding-bottom: 12px;
+
+    border-bottom: 2px solid #d9d1c7;
+
+    color: #1a3b2e;
+}
+
+h3 {
+
+    color: #c86b45;
+
+    margin-bottom: 15px;
+}
+
+.bloque {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border-radius: 16px;
+
+    border: 1px solid #e0d7ca;
+}
+
+input,
+textarea,
+select {
+
+    padding: 12px;
+
+    border: 1px solid #d2c8bc;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color: #1a3b2e;
+
+    box-shadow: 0 0 0 3px rgba(26, 59, 46, 0.15);
+}
+
+button {
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background-color: #1a3b2e;
+
+    color: white;
+
+    transition: 0.25s;
+}
+
+button:hover {
+
+    background-color: #24533f;
+
+    transform: translateY(-2px);
+}
+
+#listaPlatos,
+#listaDias,
+#listaHoras {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.categoria {
+
+    margin-top: 40px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid #c86b45;
+
+    color: #1a3b2e;
+}
+
+.item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    border-left: 5px solid #1a3b2e;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info {
+
+    flex: 1;
+}
+
+.info h3 {
+
+    margin: 0 0 10px;
+
+    color: #1a3b2e;
+}
+
+.info p {
+
+    margin: 0 0 10px;
+
+    color: #555;
+
+    line-height: 1.5;
+}
+
+.info span {
+
+    color: #c86b45;
+
+    font-weight: bold;
+}
+
+.info small {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    background-color: #eef2ee;
+
+    color: #1a3b2e;
+}
+
+.acciones {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.editar-plato {
+
+    background-color: #c86b45;
+}
+
+.editar-plato:hover {
+
+    background-color: #b65b36;
+}
+
+.eliminar-plato,
+.eliminar-dia,
+.eliminar-hora {
+
+    background-color: #8d2f2f;
+}
+
+.eliminar-plato:hover,
+.eliminar-dia:hover,
+.eliminar-hora:hover {
+
+    background-color: #732424;
+}
+
+@media (max-width: 900px) {
+
+    main {
+
+        padding: 20px;
+    }
+
+    .item {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .acciones {
+
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+}

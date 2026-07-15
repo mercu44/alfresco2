@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alfresco Restaurant | Sitges</title>
+
+    <meta name="description"
+        content="Découvrez Alfresco Restaurant, une oasis gastronomique au cœur de Sitges où la cuisine méditerranéenne et un cadre unique créent une expérience inoubliable.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" type="image/x-icon" href="./fotos/logos/alfresco-blanco.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Texto -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25/build/css/intlTelInput.css">
+
+
+</head>
+
+<body>
+
+    <!-- ==========================
+            HEADER
+    =========================== -->
+
+    <header class="header">
+        <a href="./index.html" class="logo">
+            <img class="logo-image"
+                 src="./fotos/logos/alfresco-blanco.png"
+                 alt="Alfresco Restaurant">
+        </a>
+        <div class="header-actions">
+            <div class="language-selector">
+                <button class="language-btn">
+                    FR
+                    <span>▾</span>
+                </button>
+                <div class="language-menu">
+                    <a href="../index.html" onclick="cambiarIdioma('es')">Español</a>
+                    <a href="../cat/index.html" onclick="cambiarIdioma('ca')">Català</a>
+                    <a href="../en/index.html" onclick="cambiarIdioma('en')">English</a>
+                    <a href="../fr/index.html" onclick="cambiarIdioma('fr')">Français</a>
+                </div>
+            </div>
+            <a href="#reservas" class="btn-reserva">
+                Réserver
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <!-- MENÚ DESPLEGABLE -->
+    <nav class="menu-panel">
+        <a href="./carta.html">Carte</a>
+        <a href="./contacto.html">Contact</a>
+    </nav>
+    <!-- WHATS -->
+
+    <a  class="whatsapp" 
+        target="_blank"
+        rel="noopener noreferrer"
+        href=" https://api.whatsapp.com/send/?phone=34722838527&text=Por+favor%2C+para+hacer+una+reserva+necesitamos+los+datos+siguientes%3A%0D%0ANombre+%28Name%29%0D%0AN%C3%BAmero+de+personas+%28Number+of+people%29%0D%0AD%C3%ADa+y+hora+%28Day+and+time%29.%0D%0ALes+contestaremos+en+breve.+We+will+contact+you+soon.%0D%0AGracias%21&type=phone_number&app_absent=0">
+        <img src="./fotos/logos/whats.png">
+    </a>
+
+    <!-- COOKIES 
+     <div id="cookies">
+        <p>Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestro sitio web. Si continúa utilizando este sitio asumiremos que está de acuerdo.</p> 
+        <div>
+            <button id="aceptar">ACEPTAR COOKIES</button>
+            <button id="cerrar">x</button>
+        </div>
+    </div>
+    -->
+
+    <!-- ==========================
+            HERO
+    
+    =========================== -->
+
+    <section class="hero" id="inicio">
+
+        <img src="./fotos/fotos/patio.jpg"
+            alt="Patio del restaurante Alfresco"
+            class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <div class="hero-text">
+
+                <span class="subtitle">
+                    Sitges · Depuis 1997
+                </span>
+        
+                <h1>Un patio caché où profiter de la Méditerranée.</h1>
+        
+                <p>
+                    Cuisine méditerranéenne, lumière tamisée, végétation et une atmosphère pensée pour transformer un dîner en un souvenir inoubliable.
+                </p>
+        
+            <div class="hero-buttons">
+                <a href="#reservas" class="btn-primary">Réserver mesa</a>
+                <a href="./carta.html" class="btn-secondary">
+                    Voir la carte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+        EXPERIENCIA
+    =========================== -->
+
+    <section class="experience fade-up" id="experiencia">
+        <div class="container">
+            <div class="section-title dark">
+                <span>Notre essence</span>
+                <h2>Bien plus qu’un restaurant.</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-text fade-up">
+                    <p>Au cœur de Sitges se cache un jardin où le temps semble s’arrêter.</p>
+                    <p>Entouré de verdure, d'un éclairage chaleureux et de recoins tranquilles, Alfresco offre une expérience où l'environnement est autant un protagoniste que la cuisine.</p>
+                    <p>Notre offre gastronomique met l'accent sur les produits de saison et la tradition méditerranéenne, préparés avec respect et simplicité.</p>
+                </div>
+                <div class="experience-image fade-up">
+                    <img src="fotos/fotos/restaurante4.jpg"
+                        alt="Ambiente del restaurante"
+                        loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========================
+            patio
+    =========================== -->
+
+    <section class="fullscreen-image">
+
+        <img src="fotos/fotos/alfrescoPatio4.jpg" alt="Patio de Alfresco">
+    
+        <div class="fullscreen-overlay">
+    
+            <h2>
+                Chaque recoin est pensé pour prolonger le moment.
+            </h2>
+    
+        </div>
+    
+    </section>
+    <!-- ==========================
+            GALERÍA
+    =========================== -->
+
+    <section class="gallery">
+        <div class="gallery-item large fade-up">
+            <img src="fotos/fotos/restaurante5.jpg" alt="Patio iluminado" loading="lazy">
+        </div>
+        <div class="gallery-item fade-up">
+            <img src="fotos/fotos/alfrescoPatio2.jpg" alt="Jardín del restaurante" loading="lazy">
+        </div>
+        <div class="gallery-item fade-up">
+            <img src="fotos/fotos/comida3.jpeg" alt="Plato mediterráneo" loading="lazy">
+        </div>
+        <div class="gallery-item wide fade-up">
+            <img src="fotos/fotos/restaurante6.jpg" alt="Terraza Alfresco" loading="lazy">
+        </div>
+    </section>
+
+
+    <!-- ==========================
+            COCINA
+    =========================== -->
+
+    <section class="cuisine fade-up" id="cocina">
+        <div class="container">
+            <div class="section-title">
+                <span>Cuisine méditerranéenne</span>
+                <h2>Produit, équilibre et saveur.</h2>
+            </div>
+            <div class="cuisine-grid">
+                <div class="cuisine-image">
+                    <img src="fotos/fotos/comida2.jpg"
+                        alt="Plato del restaurante"
+                        loading="lazy">
+                </div>
+                <div class="cuisine-text">
+                    <p>Notre cuisine est née du respect du produit et de la tradition méditerranéenne.</p>
+                    <p>Des plats reconnaissables, des ingrédients frais et une présentation soignée accompagnent une expérience qui commence bien avant la première bouchée.</p>
+                    <a href="#carta" class="btn-primary">Découvrir la carte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+            INSTAGRAM
+    =========================== -->
+    <section class="instagram">
+        <div class="instagram-item">
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DYhnqg_DDpP/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DYhnqg_DDpP/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Voir cette publication sur Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DYhnqg_DDpP/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Une publication partagée par Alfresco Restaurant Sitges (@alfrescorestaurant)</a></p></div></blockquote>
+        </div>
+        <div class="instagram-item">
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DaBd4uLkVdn/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DaBd4uLkVdn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Voir cette publication sur Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DaBd4uLkVdn/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Une publication partagée par Alfresco Restaurant Sitges (@alfrescorestaurant)</a></p></div></blockquote>
+        </div>
+        <div class="instagram-item">
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DalBpkwjI3G/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DalBpkwjI3G/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Voir cette publication sur Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DalBpkwjI3G/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Une publication partagée par Alfresco Restaurant Sitges (@alfrescorestaurant)</a></p></div></blockquote>
+        </div>
+    </section>
+
+    <!-- ==========================
+        1997
+    =========================== -->
+    <!-- ==========================
+        DESDE 1997
+=========================== -->
+
+<section class="legacy fade-up">
+    <div class="container">
+
+        <div class="section-title dark">
+            <span>Depuis 1997</span>
+            <h2>Près de trois décennies au cœur de Sitges.</h2>
+        </div>
+
+        <div class="legacy-content">
+
+            <div class="legacy-text">
+
+                <p>
+                    Depuis 1997, Alfresco est l'un des restaurants phares de Sitges.
+                    Depuis près de trente ans, nous accueillons les locaux, les voyageurs et les clients fidèles qui,
+                    été après été, reviennent chercher la même ambiance, la même hospitalité,
+                    et une cuisine méditerranéenne préparée dans le respect des produits.
+                </p>
+
+                <p>
+                    Rester implanté dans un lieu offrant une telle diversité culinaire pendant
+                    tant d'années n'est possible que grâce à la confiance de ceux qui nous choisissent sans cesse.
+                    Cette fidélité est notre plus grande récompense.
+                </p>
+
+                
+
+            </div>
+            <div class="legacy-img">
+                <img src="fotos/fotos/clientes.jpg" alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- ==========================
+        EL RESTAURANTE
+    =========================== -->
+
+    <section class="restaurant" id="espacios">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Le restaurant</span>
+
+                <h2>
+                    Chaque recoin invite à rester.
+                </h2>
+
+            </div>
+
+            <div class="restaurant-gallery">
+                <div><img src="fotos/fotos/xavi3.jpg" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/entrada2.JPG" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/restaurante8.jpg" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/foto4.jpg" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/alfrescoPatio5.jpg" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/lampara.jpg" alt="" loading="lazy"></div>
+                <div><img src="fotos/fotos/entrada5.jpg" alt="" loading="lazy"></div>
+
+            
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+            CARTA
+    =========================== -->
+
+    <section class="menu-section" id="carta">
+
+        <div class="menu-overlay"></div>
+
+        <div class="menu-content">
+
+            <span>Carte</span>
+
+            <h2>
+                Cuisine méditerranéenne à savourer sans se presser.
+            </h2>
+
+            <a href="./carta.html" class="btn-primary">
+                Voir la carte completa
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+            RESERVAS
+    =========================== -->
+
+    <section class="reservation" id="reservas">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Réservations</span>
+
+                <h2>
+                    Réservez votre table.
+                </h2>
+
+            </div>
+
+            <form id="reservationForm">
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Nom"
+                    required>
+            
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Adresse e-mail"
+                    required>
+            
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Numéro de téléphone"
+                    required>
+            
+                <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    placeholder="Fecha"
+                    required>
+            
+                <select
+                    id="hora"
+                    name="hora"
+                    required>
+            
+                    <option value="">Sélectionnez une heure</option>
+            
+            
+                </select>
+            
+                <select
+                    id="personas"
+                    name="personas"
+                    required>
+            
+                    <option value="">Nombre de personnes</option>
+            
+                    <option value="1">1 personne</option>
+                    <option value="2">2 personnes</option>
+                    <option value="3">3 personnes</option>
+                    <option value="4">4 personnes</option>
+                    <option value="5">5 personnes</option>
+                    <option value="6">6 personnes</option>
+            
+                </select>
+            
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    placeholder="Observations (facultatif)"
+                    rows="5"></textarea>
+            
+                <button id="btnReserva" type="submit">
+                    Demander une réservation
+                </button>
+            
+                <p id="formStatus"></p>
+            
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+            FOOTER
+    =========================== -->
+
+    <footer id="contacto">
+        <div class="container">
+            <div>
+            <img class="footer-logo"  src="./fotos/logos/alfresco-blanco.png">
+
+            </div>
+            <div>
+                <p>Carrer d'en Pau Barrabeig, 4 · Sitges</p>
+                <p>+34 938 94 06 00</p>
+                <p>alfresco@alfrescorestaurante.es</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.instagram.com/alfrescorestaurant?igsh=ODVkYm5kZDh3Ym0w&utm_source=qr">Instagram</a>
+                <a href="https://www.facebook.com/alfrescositges/?locale=es_ES">Facebook</a>
+                <a href="./privacidad.html">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25/build/js/intlTelInput.min.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+</body>
+
+</html>
