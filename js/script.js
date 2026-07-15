@@ -1,8 +1,6 @@
 
 const idioma = localStorage.getItem("idioma") || "es";
-const API = window.location.hostname === "localhost"
-    ? "http://localhost:3000/api"
-    : "/api";
+const API = window.location.hostname === "localhost"? "http://localhost:3000/api": "/api";
 
 console.log("idioma: "+idioma);
 
@@ -154,7 +152,7 @@ async function enviarReserva(e){
         boton.style.background = "#5b8f68"; 
 
         const respuesta = await fetch(
-            `${API}/gestionarCorreo`
+            `${API}/gestionarCorreo`,
             {
                 method :"POST",
                 headers: {
