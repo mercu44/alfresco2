@@ -1,5 +1,6 @@
 
 const idioma = localStorage.getItem("idioma") || "es";
+const API = "/api";
 
 console.log("idioma: "+idioma);
 
@@ -151,7 +152,7 @@ async function enviarReserva(e){
         boton.style.background = "#5b8f68"; 
 
         const respuesta = await fetch(
-            "http://localhost:3000/api/gestionarCorreo",
+            `${API}/gestionarCorreo`
             {
                 method :"POST",
                 headers: {
@@ -188,7 +189,7 @@ const horasBase = ["19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:0
 inicializarCalendario();
 async function inicializarCalendario(){
     const respuesta =  await fetch(
-        "http://localhost:3000/api/disponibilidad/dias"
+        `${API}/disponibilidad/dias`
     );
     const datos = await respuesta.json();
     console.log(datos);
@@ -211,7 +212,7 @@ const hora = document.getElementById("hora");
 const fecha = document.getElementById("fecha")
 async function obtenerHoras(fecha){
     const respuesta =  await fetch(
-        `http://localhost:3000/api/disponibilidad/horas?fecha=${fecha}`
+        `${API}/disponibilidad/horas?fecha=${fecha}`
     );
     const horarioNoDisponibles = await respuesta.json();
     let horasDisponibles =  horasBase.filter( hora => !horarioNoDisponibles.includes(hora));

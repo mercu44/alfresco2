@@ -1,4 +1,4 @@
-
+const API = "/api";
 const formulario = document.getElementById("login");
 
 formulario.addEventListener("submit", iniciarSesion);
@@ -10,7 +10,7 @@ async function iniciarSesion(evento){
     console.log(usuario);
     console.log(password);
     const respuesta = await fetch(
-        "http://localhost:3000/api/login",
+        `${API}/login`,
 
     {
 
