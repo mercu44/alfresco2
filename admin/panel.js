@@ -144,7 +144,7 @@ async function eliminarDia(fecha) {
 document
     .getElementById("formHora")
     .addEventListener("submit", añadirHora);
-
+/*
 async function añadirHora(e) {
 
     e.preventDefault();
@@ -178,6 +178,21 @@ async function añadirHora(e) {
     cargarHoras();
 
 }
+    */
+   async function añadirHora(e) {
+    e.preventDefault();
+
+    console.log("fechaHora:", document.getElementById("fechaHora"));
+    console.log("horaCierreInicio:", document.getElementById("horaCierreInicio"));
+    console.log("horaCierreFinal:", document.getElementById("horaCierreFinal"));
+
+    const fecha = document.getElementById("fechaHora").value;
+    const horaInicio = document.getElementById("horaCierreInicio").value;
+    const horaFinal = document.getElementById("horaCierreFinal").value;
+
+    console.log({ fecha, horaInicio, horaFinal });
+}
+
 
 async function cargarHoras() {
 
