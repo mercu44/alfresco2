@@ -1,5 +1,4 @@
 const container = document.getElementById("menu-container");
-const API = window.location.hostname === "localhost"? "http://localhost:3000/api": "/api";
 
 console.log("idioma: "+idioma);
 cargarCarta(idioma);
