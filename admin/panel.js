@@ -6,7 +6,7 @@ const token = localStorage.getItem("token");
 eruda.init();
 
 if (!token) {
-    window.location.href = "/admin/login.html";
+    window.location.href = "/admin/login";
 }
 
 const headers = {
@@ -38,7 +38,7 @@ function cerrarSesion() {
 
     localStorage.removeItem("token");
 
-    window.location.href = '../admin/login.html';
+    window.location.href = '../admin/login';
 
 }
 
