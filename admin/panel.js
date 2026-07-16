@@ -151,16 +151,19 @@ async function añadirHora(e) {
 
     const fecha = document.getElementById("fechaHora").value;
 
-    const hora = document.getElementById("horaCierre").value;
+    const horaInicio = document.getElementById("horaCierreInicio").value;
+    const horaFinal = document.getElementById("horaCierreFinal").value;
+
 
     const respuesta = await fetch(
-        `${API}/addHora`,
+        `${API}/addMultiplesHoras`,
         {
             method: "POST",
             headers,
             body: JSON.stringify({
                 fecha,
-                hora
+                horaInicio,
+                horaFinal
             })
         }
     );
