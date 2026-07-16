@@ -1,5 +1,5 @@
 const container = document.getElementById("menu-container");
-
+const API = window.location.hostname === "localhost"? "http://localhost:3000/api": "/api";
 
 console.log("idioma: "+idioma);
 //router.get("/",  cartaController.obtenerCarta);
@@ -7,7 +7,7 @@ cargarCarta(idioma);
 
 async function cargarCarta(idioma){
     const respuesta = await fetch(
-    "http://localhost:3000/api/carta?idioma="+idioma
+    `${API}/carta?idioma=${idioma}`
     );
     const datos = await respuesta.json();
     let categoria = "";
