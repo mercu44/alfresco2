@@ -3,6 +3,8 @@ const API = window.location.hostname === "localhost"
     : "/api";
 const token = localStorage.getItem("token");
 
+eruda.init();
+
 if (!token) {
     window.location.href = "/admin/login.html";
 }
@@ -36,7 +38,7 @@ function cerrarSesion() {
 
     localStorage.removeItem("token");
 
-    window.location.href = "/login.html";
+    window.location.href = '../admin/login.html';
 
 }
 
@@ -123,7 +125,9 @@ async function eliminarDia(fecha) {
             body: JSON.stringify({ fecha })
         }
     );
-
+    console.log(respuesta.status);
+    console.log(respuesta.ok);
+    console.log(respuesta);
     if (!respuesta.ok) {
         alert("Error eliminando fecha");
         return;
