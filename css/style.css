@@ -742,7 +742,7 @@ h1,h2,h3,h4{
 .reservation{
 
     background:var(--black);
-    color: ;
+    color:var(--white);
 
 }
 
@@ -750,6 +750,8 @@ h1,h2,h3,h4{
 
     max-width:900px;
 
+    width:100%;
+    
     margin:auto;
 
     display:grid;
@@ -783,6 +785,8 @@ textarea{
     padding:18px;
 
     color:white;
+    
+    width: 100%;
 
     font-size:1rem;
 
