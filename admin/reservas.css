@@ -315,6 +315,7 @@ button:hover{
 }
 
 
+
 /*=========================================================
     CONTENIDO TARJETA
 =========================================================*/
@@ -412,6 +413,40 @@ button:hover{
 
     font-size:13px;
 
+}
+/*=========================================================
+    ACCIONES
+=========================================================*/
+.acciones{
+    display:flex;
+    gap:10px;
+}
+
+.acciones button{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.2s;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.btnAceptar{
+    background:var(--green);
+    color:white;
+}
+
+.btnDenegar{
+    background:var(--red);
+    color:white;
+}
+
+.acciones button:hover{
+    transform:scale(1.08);
+    filter:brightness(1.1);
 }
 
 

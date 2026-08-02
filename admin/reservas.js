@@ -87,7 +87,7 @@ function crearTarjeta(reserva, cliente) {
 
     const tarjeta = document.createElement("article");
     tarjeta.className = "item";
-
+    tarjeta.id = reserva.id;
     tarjeta.innerHTML = `
         <div class="estado ${estadoReserva}"></div>
 
@@ -122,6 +122,15 @@ function crearTarjeta(reserva, cliente) {
 
             </div>
 
+        </div>
+        <div class="acciones">
+            <button class="btnAceptar">
+                <i class="fa-solid fa-check"></i>
+            </button>
+
+            <button class="btnDenegar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
     `;
 
