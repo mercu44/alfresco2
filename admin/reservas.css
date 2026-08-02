@@ -419,6 +419,7 @@ button:hover{
 =========================================================*/
 .acciones{
     display:flex;
+    flex-direction: column;
     gap:10px;
 }
 
