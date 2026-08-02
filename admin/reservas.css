@@ -706,6 +706,7 @@ hr{
 
     main{
         padding:12px;
+        flex-direction: column;
     }
 
     .header{
