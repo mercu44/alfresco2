@@ -89,7 +89,7 @@ function crearTarjeta(reserva, cliente) {
     tarjeta.className = "item";
 
     tarjeta.innerHTML = `
-        <div class="${estadoReserva}"></div>
+        <div class="estado ${estadoReserva}"></div>
 
         <div class="item-contenido">
 
