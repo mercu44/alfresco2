@@ -1,0 +1,673 @@
+/*=========================================================
+    PALETA
+=========================================================*/
+
+:root{
+
+    --bg:#2F373D;
+
+    --panel:#3A4248;
+
+    --panel-light:#454F56;
+
+    --panel-hover:#4A545C;
+
+    --border:#515B63;
+
+    --text:#F5F5F5;
+
+    --text-soft:#C9CFD4;
+
+    --yellow:#FFC933;
+
+    --green:#57C89C;
+
+    --orange:#F6B443;
+
+    --red:#EF6461;
+
+    --purple:#D86BD9;
+
+    --blue:#2FA7F5;
+
+    --shadow:0 6px 20px rgba(0,0,0,.18);
+
+}
+
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:Inter,"Segoe UI",sans-serif;
+
+    min-height:100vh;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/*=========================================================
+    LAYOUT
+=========================================================*/
+
+main{
+
+    padding:30px;
+
+    display:flex;
+
+    gap:25px;
+
+    min-height:100vh;
+
+}
+
+
+/*=========================================================
+    SIDEBAR
+=========================================================*/
+
+.sidebar{
+
+    width:430px;
+
+    background:var(--panel);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+/*=========================================================
+    PANEL DERECHO
+=========================================================*/
+
+.contenido-principal{
+
+    flex:1;
+
+    background:var(--panel);
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.header h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+
+/*=========================================================
+    INPUTS
+=========================================================*/
+
+input,
+select{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    background:var(--panel-light);
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+input::placeholder{
+
+    color:#AAB2B9;
+
+}
+
+input:focus,
+select:focus{
+
+    border:2px solid var(--yellow);
+
+}
+
+
+/*=========================================================
+    BOTONES
+=========================================================*/
+
+button{
+
+    background:var(--yellow);
+
+    color:#222;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:14px 24px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.05);
+
+}
+
+
+/*=========================================================
+    LISTA
+=========================================================*/
+
+.lista{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+
+/*=========================================================
+    TARJETA RESERVA
+=========================================================*/
+
+.item{
+
+    display:flex;
+
+    overflow:hidden;
+
+    background:#30383E;
+
+    border-radius:14px;
+
+    min-height:82px;
+
+    transition:.2s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.item:hover{
+
+    background:#3D474F;
+
+    transform:translateY(-2px);
+
+}
+
+
+/*=========================================================
+    BARRA ESTADO
+=========================================================*/
+
+.estado{
+
+    width:18px;
+
+    align-self:stretch;
+
+}
+
+.confirmada{
+
+    background:var(--green);
+
+}
+
+.pendiente{
+
+    background:var(--orange);
+
+}
+
+.cancelada{
+
+    background:var(--red);
+
+}
+
+.espera{
+
+    background:var(--blue);
+
+}
+
+.vip{
+
+    background:var(--purple);
+
+}
+
+
+/*=========================================================
+    CONTENIDO TARJETA
+=========================================================*/
+
+.item-contenido{
+
+    flex:1;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+/*=========================================================
+    CLIENTE
+=========================================================*/
+
+.item-cliente{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.item-cliente h3{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:white;
+
+}
+
+.item-cliente span{
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+}
+
+
+/*=========================================================
+    DATOS
+=========================================================*/
+
+.item-info{
+
+    display:flex;
+
+    gap:22px;
+
+    align-items:center;
+
+    color:var(--text-soft);
+
+}
+
+.item-info i{
+
+    color:var(--yellow);
+
+}
+
+
+/*=========================================================
+    BADGES
+=========================================================*/
+
+.badge{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    background:var(--panel-light);
+
+    color:white;
+
+    font-size:13px;
+
+}
+
+
+/*=========================================================
+    TÍTULOS
+=========================================================*/
+
+h1{
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+h2{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+h3{
+
+    font-size:18px;
+
+}
+
+
+/*=========================================================
+    FILAS Y COLUMNAS
+=========================================================*/
+
+.fila{
+
+    display:flex;
+
+    flex-direction:row;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.columna{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+/*=========================================================
+    MESAS
+=========================================================*/
+
+.mesas{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(110px,1fr));
+
+    gap:35px;
+
+}
+
+.mesa{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:22px;
+
+    background:#293136;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.mesa:hover{
+
+    transform:scale(1.05);
+
+}
+
+.mesa.libre{
+
+    background:#2D363B;
+
+}
+
+.mesa.ocupada{
+
+    background:var(--green);
+
+}
+
+.mesa.pendiente{
+
+    background:var(--orange);
+
+}
+
+.mesa.cancelada{
+
+    background:var(--red);
+
+}
+
+
+/*=========================================================
+    TARJETAS
+=========================================================*/
+
+.card{
+
+    background:var(--panel);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/*=========================================================
+    ICONOS
+=========================================================*/
+
+.icono{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:var(--panel-light);
+
+}
+
+
+/*=========================================================
+    DIVISORES
+=========================================================*/
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:10px 0;
+
+}
+
+
+/*=========================================================
+    SCROLL
+=========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#5A646C;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6A757E;
+
+}
+
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:1100px){
+
+    main{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .fila{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .item-contenido{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .mesas{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}

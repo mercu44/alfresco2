@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas · Alfresco</title>
+    <link rel="stylesheet" href="reservas.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+        <aside class="sidebar">
+
+            <div class="header">
+                <h1>Reservas</h1>
+                <button id="cerrarSesion">Salir</button>
+            </div>
+
+            <div class="columna">
+
+                <button>Todas las reservas</button>
+                <button>Reservas por día</button>
+
+                <input type="date">
+
+                <input type="search" placeholder="Buscar cliente...">
+
+            </div>
+
+        </aside>
+
+        <!-- ========================= -->
+        <!-- CONTENIDO -->
+        <!-- ========================= -->
+        <section class="contenido-principal">
+
+            <div class="header">
+                <h2>Reservas actuales</h2>
+
+                <div class="badge" id="numReservas">
+                    12 reservas
+                </div>
+            </div>
+
+            <section class="lista" id="listaReservas">
+
+                <!-- RESERVA -->
+
+                <article class="item">
+
+                    <div class="estado pendiente"></div>
+
+                    <div class="item-contenido">
+
+                        <div class="item-cliente">
+
+                            <h3>Alberto Blasco</h3>
+
+                            <span>+34 646736013</span>
+
+                            <span>albertoblascoo@gmail.com</span>
+
+                        </div>
+
+                        <div class="item-info">
+
+                            <span>
+                                <i class="fa-solid fa-users"></i>
+                                2 personas
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-calendar"></i>
+                                15/08/2026
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-clock"></i>
+                                16:00
+                            </span>
+
+                            <span class="badge">
+                                WEB
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+               
+
+            </section>
+
+        </section>
+
+    </main>
+    <script src="./reservas.js"></script>
+</body>
+
+</html>
