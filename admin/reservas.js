@@ -75,16 +75,16 @@ async function cargarReservas(estado) {
 }
 
 
-function crearTarjeta(reserva, cliente,estado) {
+function crearTarjeta(reserva, cliente) {
     console.log("crearTarjeta");
-    console.log(estado);
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
 
     const hora = reserva.hora_inicio.slice(0, 5);
 
-    let estado = reserva.estado;
+    let estadoReserva = reserva.estado;
+    console.log(estadoReserva);
 
     if (reserva.lista_espera) {
         estado = "espera";
@@ -94,7 +94,7 @@ function crearTarjeta(reserva, cliente,estado) {
     tarjeta.className = "item";
 
     tarjeta.innerHTML = `
-        <div class="${estado}"></div>
+        <div class="${estadoReserva}"></div>
 
         <div class="item-contenido">
 
