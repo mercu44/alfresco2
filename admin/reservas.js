@@ -9,7 +9,7 @@ const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
-
+/* 
 document.addEventListener("DOMContentLoaded", () => {
     if (!token) {
         window.location.href = "login.html";
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "login.html";
     });
 });
-
+*/
 let estadoS = "pendiente";
 estadoFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;

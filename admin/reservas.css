@@ -80,6 +80,8 @@ main{
 
     display:flex;
 
+    flex-direction: column;
+
     gap:25px;
 
     min-height:100vh;
@@ -93,7 +95,6 @@ main{
 
 .sidebar{
 
-    width:430px;
 
     background:var(--panel);
 
@@ -103,7 +104,9 @@ main{
 
     display:flex;
 
-    flex-direction:column;
+    flex-direction:row;
+
+    justify-content: space-between;
 
     gap:18px;
 
@@ -113,8 +116,12 @@ main{
 /*=========================================================
     PANEL DERECHO
 =========================================================*/
-
-.contenido-principal{
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+}
+.info-reserva{
 
     flex:1;
 
@@ -125,7 +132,18 @@ main{
     padding:25px;
 
 }
+.info-cliente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
 
+    background:var(--panel);
+
+    border-radius:18px;
+
+    padding:25px;
+}
 
 /*=========================================================
     HEADER

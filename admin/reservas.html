@@ -23,10 +23,9 @@
 
             <div class="header">
                 <h1>Reservas</h1>
-                <button id="cerrarSesion">Salir</button>
             </div>
 
-            <div class="columna">
+            <div class="fila">
 
                 <button>Todas las reservas</button>
                 <button>Reservas por día</button>
@@ -36,13 +35,16 @@
                 <input type="search" placeholder="Buscar cliente...">
 
             </div>
+            <button id="cerrarSesion">Salir</button>
+
 
         </aside>
 
         <!-- ========================= -->
         <!-- CONTENIDO -->
         <!-- ========================= -->
-        <section class="contenido-principal">
+         <div class="contenedor">
+        <section class="info-reserva">
 
             <div class="header">
                 <h2>Reservas actuales</h2>
@@ -113,6 +115,14 @@
             </section>
 
         </section>
+        <section class="info-cliente">
+            <div class="header">
+                <h2>Cliente Info</h2>
+            </div>
+
+
+        </section>
+        </div>
 
     </main>
     <script src="./reservas.js"></script>
