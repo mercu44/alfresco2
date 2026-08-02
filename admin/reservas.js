@@ -52,7 +52,7 @@ async function cargarReservas(estado) {
         }
 
         reservas.forEach(({ reserva, cliente }) => {
-            listaReservas.appendChild(crearTarjeta(reserva, cliente));
+            listaReservas.appendChild(crearTarjeta(reserva, cliente,estado));
         });
 
     } catch (error) {
@@ -67,7 +67,7 @@ async function cargarReservas(estado) {
 }
 
 
-function crearTarjeta(reserva, cliente) {
+function crearTarjeta(reserva, cliente,estado) {
     console.log("crearTarjeta");
     const fecha = new Date(reserva.fecha);
 
