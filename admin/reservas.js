@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 console.log("reservas.js");
-
+let estadoS;
 estadoFormulario.addEventListener("change", ()=>{
-    estado = estadoSelect.value;
-    cargarReservas(estado);
+    estadoS = estadoSelect.value;
+    console.log("cambio a: "+estadoS );
+    cargarReservas(estadoS);
 })
 
 async function cargarReservas(estado) {
