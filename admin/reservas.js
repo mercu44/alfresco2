@@ -9,31 +9,28 @@ const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
-/* 
+
 document.addEventListener("DOMContentLoaded", () => {
     if (!token) {
         window.location.href = "login.html";
         return;
     }
 
-    cargarReservas();
+    cargarReservas("pendiente");
 
     document.getElementById("cerrarSesion").addEventListener("click", () => {
         localStorage.removeItem("token");
         window.location.href = "login.html";
     });
 });
-*/
-console.log("reservas.js");
+
 let estadoS = "pendiente";
 estadoFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
-    console.log("cambio a: "+estadoS );
     cargarReservas(estadoS);
 })
 
 async function cargarReservas(estado) {
-    console.log("cargarReservas");
     try {
 
         const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
@@ -58,7 +55,6 @@ async function cargarReservas(estado) {
             `;
             return;
         }
-        console.log(estado);
         reservas.forEach(({ reserva, cliente }) => {
             listaReservas.appendChild(crearTarjeta(reserva, cliente,estado));
         });
@@ -76,7 +72,6 @@ async function cargarReservas(estado) {
 
 
 function crearTarjeta(reserva, cliente) {
-    console.log("crearTarjeta");
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
