@@ -7,6 +7,8 @@ const token = localStorage.getItem("token");
 
 const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
+const estadoFormulario = document.getElementById("estadoForm");
+const estadoSelect = document.getElementById("estadoSelect");
 /* 
 document.addEventListener("DOMContentLoaded", () => {
     if (!token) {
@@ -22,8 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 */
-cargarReservas("pendiente");
 console.log("reservas.js");
+
+estadoFormulario.addEventListener("change", ()=>{
+    estado = estadoSelect.value;
+    cargarReservas(estado);
+})
+
 async function cargarReservas(estado) {
     console.log("cargarReservas");
     try {
