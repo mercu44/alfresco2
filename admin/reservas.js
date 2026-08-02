@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 console.log("reservas.js");
-let estadoS;
+let estadoS = "pendiente";
 estadoFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
     console.log("cambio a: "+estadoS );
