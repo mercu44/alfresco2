@@ -50,7 +50,7 @@ async function cargarReservas(estado) {
             `;
             return;
         }
-
+        console.log(estado);
         reservas.forEach(({ reserva, cliente }) => {
             listaReservas.appendChild(crearTarjeta(reserva, cliente,estado));
         });
@@ -69,6 +69,7 @@ async function cargarReservas(estado) {
 
 function crearTarjeta(reserva, cliente,estado) {
     console.log("crearTarjeta");
+    console.log(estado);
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
