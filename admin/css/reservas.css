@@ -91,7 +91,13 @@ a:hover{
 
 }
 
+.no-implementado{
+    background-color: rgb(255, 132, 132);;
 
+}
+.en-proceso{
+    background-color: rgb(255, 204, 110);
+}
 
 /*=========================================================
     LAYOUT
@@ -267,6 +273,7 @@ button:hover{
     filter:brightness(1.05);
 
 }
+
 
 
 /*=========================================================

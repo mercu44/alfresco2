@@ -27,12 +27,12 @@
 
             <div class="fila">
 
-                <a class="en-proceso" >Gestion Reservas</a>
-                <a class="no-implementado">Reservas por día</a>
-                <a class="en-proceso" href="./clientes.html">Clientes</a>
-                <a class="no-implementado">Configuracion de mesas</a>
-                <a class="no-implementado">Estadísticas</a>
-                <a class="no-implementado">Nueva Reserva</a>
+                <a href="./reservas.html">Gestion Reservas</a>
+                <a>Reservas por día</a>
+                <a>Clientes</a>
+                <a>Configuracion de mesas</a>
+                <a>Estadísticas</a>
+                <a>Nueva Reserva</a>
 
             </div>
             <button id="cerrarSesion">Salir</button>
@@ -47,31 +47,12 @@
         <section class="info-reserva">
 
             <div class="header">
-                <h2>Reservas actuales</h2>
-                <form id="estadoForm">
-                    <select id="estadoSelect">
-                        <option value ="pendiente">Pendiente</option>
-                        <option value ="hecha">Hecha</option>
-                        <option value ="confirmada">Confirmada</option>
-                        <option value ="cancelada">Cancelada</option>
-                        <option value ="no-show">No-show</option>
-                        <option value ="pasada">Pasada</option>
-                    </select>
-
-                    
-                </form>
-                <form id="filtroForm">
-                    <select id="filtroSelect">
-                        <option value="ohr">Orden hecha: mas recientes</option>
-                        <option value="oha">Orden hecha: mas antiguas</option>
-
-                        <option value="orr">Orden reserva: mas recientes</option>
-                        <option value="ora">Orden reserva: mas antiguas</option>
-
-                    </select>
+                <h2>Clientes</h2>
+                <form>
+                    <input type="search" placeholder="Buscar Cliente...">
                 </form>
                 <div class="badge" id="numReservas">
-                    12 reservas
+                    12 clientes
                 </div>
             </div>
 
@@ -81,7 +62,6 @@
 
                 <article class="item">
 
-                    <div class="estado pendiente"></div>
 
                     <div class="item-contenido">
 
@@ -98,8 +78,8 @@
                         <div class="item-info">
 
                             <span>
-                                <i class="fa-solid fa-users"></i>
-                                2 personas
+                                <i class="fa-solid fa-flag"></i>
+                                Español
                             </span>
 
                             <span>
@@ -113,7 +93,7 @@
                             </span>
 
                             <span class="badge">
-                                WEB
+                                5
                             </span>
 
                         </div>
@@ -128,7 +108,7 @@
 
         </section>
         <section class="info-cliente columna" >
-                <h2>Cliente Info</h2>
+                <h2>Cliente Editar</h2>
             <div class="header columna" id="infoCliente">
                 <p>Id</p>
                 <p>prefijo</p>
@@ -143,13 +123,14 @@
                 <p>numero reservas</p>
                 <p>ultima visita</p>
             </div>
+            <button>Guardar</button>
 
 
         </section>
         </div>
 
     </main>
-    <script src="./js/reservas.js"></script>
+    <script src="./js/clientes.js"></script>
 </body>
 
 </html>

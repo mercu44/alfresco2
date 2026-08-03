@@ -25,13 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 */
+/* 
+<form id="filtroForm">
+                    <select id="filtroReservas">
+                        <option value="ohr">Orden hecha: mas recientes</option>
+                        <option value="oha">Orden hecha: mas antiguas</option>
+
+                        <option value="orr">Orden reserva: mas recientes</option>
+                        <option value="ora">Orden reserva: mas antiguas</option>
+
+                    </select>
+*/
+const filtroFormulario = document.getElementById("filtroForm");
+const filtroSelect = document.getElementById("filtroSelect")
+filtroFormulario.addEventListener("change", ()=>{
+    estadoS = estadoSelect.value;
+    filtro = filtroSelect.value;
+    cargarReservas(estadoS, filtro);
+})
+
 let estadoS = "pendiente";
 estadoFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
-    cargarReservas(estadoS);
+    filtro = filtroSelect.value;
+    cargarReservas(estadoS,filtro);
 })
 
-async function cargarReservas(estado) {
+async function cargarReservas(estado, orden) {
     try {
 
         const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
@@ -44,8 +64,31 @@ async function cargarReservas(estado) {
             throw new Error("No se pudieron obtener las reservas");
         }
 
-        const reservas = await respuesta.json();
+        let reservas = await respuesta.json();
+        if(orden==="orr"){
+            reservas.sort((a,b) => 
+            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
+            );
+        }
+        else if(orden==="ora"){
+            reservas.sort((a,b) => 
+            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
+            );
+        }
+        else if(orden==="ohr"){
+            reservas.sort((a,b) =>{
+                new Date(b.reserva.fecha_creacion) - new Date(a.resrva.fecha_creacion)
+            } );
+        }
+        else if(orden==="oha"){
+            reservas.sort((a,b) =>{
+                new Date(a.reserva.fecha_creacion) - new Date(b.resrva.fecha_creacion)
+            } );
+        }
+        console.log(reservas[0].fecha);
+        console.log(reservas[0].fecha_creacion);
 
+        
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
         if (reservas.length === 0) {
@@ -74,7 +117,7 @@ function crearClienteInfo(cliente){
     const infoCliente = document.getElementById("infoCliente");
     infoCliente.innerHTML = ` 
         <p>Id: ${cliente.id}</p>
-        <p>telefono: ${cliente.telefono}</p>
+        <p>telefono:+${cliente.prefijo} ${cliente.telefono}</p>
         <p>correo: ${cliente.correo}</p>
         <p>nombre: ${cliente.nombre}</p>
         <p>nacionalidad: ${cliente.nacionalidad}</p>
