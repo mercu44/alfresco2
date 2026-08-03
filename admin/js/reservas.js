@@ -79,12 +79,12 @@ async function cargarReservas(estado, orden) {
         }
         else if(orden==="ohr"){
             reservas.sort((a,b) =>{
-                new Date(b.reserva.fecha_creacion) - new Date(a.resrva.fecha_creacion)
+                new Date(b.reserva.fecha_creacion) - new Date(a.reserva.fecha_creacion)
             } );
         }
         else if(orden==="oha"){
             reservas.sort((a,b) =>{
-                new Date(a.reserva.fecha_creacion) - new Date(b.resrva.fecha_creacion)
+                new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             } );
         }
         console.log(reservas[0].fecha);
