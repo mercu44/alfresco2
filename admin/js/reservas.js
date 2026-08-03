@@ -196,11 +196,11 @@ function crearTarjeta(reserva, cliente) {
         
     `;
     const item = tarjeta.querySelector(".item");
-    const clienteInfo = tarjeta.getElementById("clienteInfo");
-    const editarReserva = tarjeta.getElementById("editarReserva");
-    const aceptarReserva = tarjeta.getElementById("edaceptarReservaitarReserva");
-    const rechazarReserva = tarjeta.getElementById("rechazarReserva");
-    const archivarReserva = tarjeta.getElementById("archivarReserva");
+    const clienteInfo = tarjeta.querySelector("#clienteInfo");
+    const editarReserva = tarjeta.querySelector("#editarReserva");
+    const aceptarReserva = tarjeta.querySelector("#edaceptarReservaitarReserva");
+    const rechazarReserva = tarjeta.querySelector("#rechazarReserva");
+    const archivarReserva = tarjeta.querySelector("#archivarReserva");
 
     clienteInfo.addEventListener("click", ()=>{
         crearClienteInfo(cliente);
