@@ -336,7 +336,12 @@ button:hover{
     background:var(--orange);
 
 }
-
+.hecha{
+    background-color: var(--purple);
+}
+.pasada{
+    background-color: grey;
+}
 .cancelada{
 
     background:var(--red);
