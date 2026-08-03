@@ -386,12 +386,12 @@ button:hover{
 }
 .item-wrapper:hover .submenu{
     display: flex;
-    filter:brightness(1.10);
+    filter:brightness(0.9);
 
 }
 .item-wrapper:hover .item{
     border-radius: 0;
-    filter:brightness(1.10);
+    filter:brightness(0.9);
 }
 
 .submenu{

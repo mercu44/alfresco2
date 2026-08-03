@@ -25,18 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 */
-/* 
-<form id="filtroForm">
-                    <select id="filtroReservas">
-                        <option value="ohr">Orden hecha: mas recientes</option>
-                        <option value="oha">Orden hecha: mas antiguas</option>
 
-                        <option value="orr">Orden reserva: mas recientes</option>
-                        <option value="ora">Orden reserva: mas antiguas</option>
-
-                    </select>
-*/
 const filtroFormulario = document.getElementById("filtroForm");
+let estadoS = "pendiente";
+let filtro;
 const filtroSelect = document.getElementById("filtroSelect")
 filtroFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
@@ -44,7 +36,7 @@ filtroFormulario.addEventListener("change", ()=>{
     cargarReservas(estadoS, filtro);
 })
 
-let estadoS = "pendiente";
+
 estadoFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
     filtro = filtroSelect.value;
@@ -132,6 +124,27 @@ function crearClienteInfo(cliente){
 
 
 }
+async function cambiarEstadoReserva(id,estado){
+    try{
+        const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
+            method: "POST",
+            headers:{
+                Authorization : `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+            ,
+            body: JSON.stringify({id,estado})
+        });
+        if(!resultado.ok){
+            throw new Error();
+        }
+        const datos = await resultado.json();
+
+    }catch(error){
+        console.error(error);
+    }
+
+}
 function crearTarjeta(reserva, cliente) {
     const fecha = new Date(reserva.fecha);
 
@@ -187,20 +200,31 @@ function crearTarjeta(reserva, cliente) {
             </div>
         </article>
         <div class="submenu">
-            <button class="btnSubmenu greyBack" id="clienteInfo">Cliente info</button>
-            <button class="btnSubmenu orangeBack" id="editarReserva">Editar Reserva</button>
-            <button class="btnSubmenu greenBack" id="aceptarReserva">Aceptar</button>
-            <button class="btnSubmenu redBack" id="rechazarReserva">Rechazar</button>
-            <button class="btnSubmenu blueBack" id="archivarReserva">Archivar</button>
+            <button class="btnSubmenu greyBack btnClienteInfo">Cliente info</button>
+            <button class="btnSubmenu orangeBack btnEditarReserva">Editar Reserva</button>
+            <button class="btnSubmenu greenBack btnAceptarReserva">Aceptar</button>
+            <button class="btnSubmenu redBack btnRechazarReserva">Rechazar</button>
+            <button class="btnSubmenu blueBack btnArchivarReserva">Archivar</button>
         </div>
         
     `;
     const item = tarjeta.querySelector(".item");
-    const clienteInfo = tarjeta.querySelector("#clienteInfo");
-    const editarReserva = tarjeta.querySelector("#editarReserva");
-    const aceptarReserva = tarjeta.querySelector("#edaceptarReservaitarReserva");
-    const rechazarReserva = tarjeta.querySelector("#rechazarReserva");
-    const archivarReserva = tarjeta.querySelector("#archivarReserva");
+    const clienteInfo = tarjeta.querySelector(".btnClienteInfo");
+    const editarReserva = tarjeta.querySelector(".btnEditarReserva");
+    const aceptarReserva = tarjeta.querySelector(".btnAceptarReserva");
+    const rechazarReserva = tarjeta.querySelector(".btnRechazarReserva");
+    const archivarReserva = tarjeta.querySelector(".btnArchivarReserva");
+
+    aceptarReserva.addEventListener("click", async ()=>{
+        await cambiarEstadoReserva(reserva.id,"hecha");
+        cargarReservas(estadoS, filtro);
+
+    })
+    rechazarReserva.addEventListener("click", async ()=>{
+        await cambiarEstadoReserva(reserva.id,"pasada")
+        cargarReservas(estadoS, filtro);
+
+    })
 
     clienteInfo.addEventListener("click", ()=>{
         crearClienteInfo(cliente);
