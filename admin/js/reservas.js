@@ -65,6 +65,8 @@ async function cargarReservas(estado, orden) {
         }
 
         let reservas = await respuesta.json();
+        console.log(reservas);
+
         if(orden==="orr"){
             reservas.sort((a,b) => 
             new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
