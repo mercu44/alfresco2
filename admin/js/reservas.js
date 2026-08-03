@@ -69,25 +69,24 @@ async function cargarReservas(estado, orden) {
 
         if(orden==="orr"){
             reservas.sort((a,b) => 
-            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
+            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
             );
         }
         else if(orden==="ora"){
             reservas.sort((a,b) => 
-            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
+            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
             );
         }
         else if(orden==="ohr"){
             reservas.sort((a,b) =>
-                new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
+                new Date(b.reserva.fecha_creacion) - new Date(a.reserva.fecha_creacion)
              );
         }
         else if(orden==="oha"){
             reservas.sort((a,b) =>
-                new Date(b.reserva.fecha_creacion) - new Date(a.reserva.fecha_creacion)
+                new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             );
         }
-        console.log(orden);
 
         
         listaReservas.innerHTML = "";
