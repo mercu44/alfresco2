@@ -9,6 +9,7 @@ const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
+
 /* 
 document.addEventListener("DOMContentLoaded", () => {
     if (!token) {
@@ -69,8 +70,25 @@ async function cargarReservas(estado) {
         `;
     }
 }
+function crearClienteInfo(cliente){
+    const infoCliente = document.getElementById("infoCliente");
+    infoCliente.innerHTML = ` 
+        <p>Id: ${cliente.id}</p>
+        <p>telefono: ${cliente.telefono}</p>
+        <p>correo: ${cliente.correo}</p>
+        <p>nombre: ${cliente.nombre}</p>
+        <p>nacionalidad: ${cliente.nacionalidad}</p>
+        <p>puntuacion: ${cliente.puntuacion}</p>
+        <p>comentariosMios: ${cliente.comentarios}</p>
+        <p>numero cancelaciones</p>
+        <p>numero no-show</p>
+        <p>numero reservas</p>
+        <p>ultima visita</p>
+    `
 
 
+
+}
 function crearTarjeta(reserva, cliente) {
     const fecha = new Date(reserva.fecha);
 
@@ -133,6 +151,9 @@ function crearTarjeta(reserva, cliente) {
             </button>
         </div>
     `;
+    tarjeta.addEventListener("click", ()=>{
+        crearClienteInfo(cliente);
+    })
 
     return tarjeta;
 }
