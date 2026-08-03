@@ -268,9 +268,8 @@ button{
 
 button:hover{
 
-    transform:translateY(-2px);
 
-    filter:brightness(1.05);
+    filter:brightness(1.10);
 
 }
 
@@ -310,14 +309,6 @@ button:hover{
     transition:.2s;
 
     box-shadow:var(--shadow);
-
-}
-
-.item:hover{
-
-    background:#3D474F;
-
-    transform:translateY(-2px);
 
 }
 
@@ -384,6 +375,53 @@ button:hover{
 
 }
 
+.item-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.item-wrapper:hover{
+
+    transform:translateY(-2px);
+}
+.item-wrapper:hover .submenu{
+    display: flex;
+    filter:brightness(1.10);
+
+}
+.item-wrapper:hover .item{
+    border-radius: 0;
+    filter:brightness(1.10);
+}
+
+.submenu{
+    display:none;
+    gap: 8px;
+    margin-left: 18px ;
+    padding: 20px;
+    background-color:#30383E;
+    box-shadow:var(--shadow);
+    clip-path: inset(0px -20px -20px -20px); 
+    overflow:hidden;
+}
+.btnSubmenu{
+    border-radius: 3px;
+}
+.greenBack{
+    background-color: var(--green);
+}
+.redBack{
+    background-color: var(--red);
+}
+.blueBack{
+    background-color: var(--blue);
+}
+.greyBack{
+    background-color: grey;
+}
+.orangeBack{
+    background-color: var(--orange);
+}
 
 /*=========================================================
     CLIENTE
@@ -439,6 +477,8 @@ button:hover{
     color:var(--yellow);
 
 }
+
+
 
 
 /*=========================================================

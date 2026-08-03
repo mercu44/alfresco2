@@ -146,55 +146,63 @@ function crearTarjeta(reserva, cliente) {
         estado = "espera";
     }
 
-    const tarjeta = document.createElement("article");
-    tarjeta.className = "item";
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "item-wrapper";
     tarjeta.id = reserva.id;
     tarjeta.innerHTML = `
-        <div class="estado ${estadoReserva}"></div>
+        <article class="item">
+            <div class="estado ${estadoReserva}"></div>
 
-        <div class="item-contenido">
+            <div class="item-contenido">
 
-            <div class="item-cliente">
-                <h3>${cliente.nombre}</h3>
-                <span>${cliente.prefijo} ${cliente.telefono}</span>
-                <span>${cliente.correo}</span>
+                <div class="item-cliente">
+                    <h3>${cliente.nombre}</h3>
+                    <span>${cliente.prefijo} ${cliente.telefono}</span>
+                    <span>${cliente.correo}</span>
+                </div>
+
+                <div class="item-info">
+
+                    <span>
+                        <i class="fa-solid fa-users"></i>
+                        ${reserva.personas}
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        ${fechaFormateada}
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        ${hora}
+                    </span>
+
+                    <span class="badge">
+                        ${reserva.tipo_reserva.toUpperCase()}
+                    </span>
+
+                </div>
+
             </div>
-
-            <div class="item-info">
-
-                <span>
-                    <i class="fa-solid fa-users"></i>
-                    ${reserva.personas}
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-calendar"></i>
-                    ${fechaFormateada}
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-clock"></i>
-                    ${hora}
-                </span>
-
-                <span class="badge">
-                    ${reserva.tipo_reserva.toUpperCase()}
-                </span>
-
-            </div>
-
+        </article>
+        <div class="submenu">
+            <button class="btnSubmenu greyBack" id="clienteInfo">Cliente info</button>
+            <button class="btnSubmenu orangeBack" id="editarReserva">Editar Reserva</button>
+            <button class="btnSubmenu greenBack" id="aceptarReserva">Aceptar</button>
+            <button class="btnSubmenu redBack" id="rechazarReserva">Rechazar</button>
+            <button class="btnSubmenu blueBack" id="archivarReserva">Archivar</button>
         </div>
-        <div class="acciones">
-            <button class="btnAceptar">
-                <i class="fa-solid fa-check"></i>
-            </button>
-
-            <button class="btnDenegar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+        
     `;
-    tarjeta.addEventListener("click", ()=>{
+    const item = tarjeta.querySelector(".item");
+    const clienteInfo = tarjeta.getElementById("clienteInfo");
+    const editarReserva = tarjeta.getElementById("editarReserva");
+    const aceptarReserva = tarjeta.getElementById("edaceptarReservaitarReserva");
+    const rechazarReserva = tarjeta.getElementById("rechazarReserva");
+    const archivarReserva = tarjeta.getElementById("archivarReserva");
+
+    clienteInfo.addEventListener("click", ()=>{
         crearClienteInfo(cliente);
     })
 
