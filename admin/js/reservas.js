@@ -69,12 +69,12 @@ async function cargarReservas(estado, orden) {
 
         if(orden==="orr"){
             reservas.sort((a,b) => 
-            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
+            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
             );
         }
         else if(orden==="ora"){
             reservas.sort((a,b) => 
-            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
+            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
             );
         }
         else if(orden==="ohr"){
