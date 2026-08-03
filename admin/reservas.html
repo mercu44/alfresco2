@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas · Alfresco</title>
-    <link rel="stylesheet" href="reservas.css">
+    <link rel="stylesheet" href="./css/reservas.css">
 
     <!-- Iconos -->
     <link rel="stylesheet"
@@ -27,12 +27,12 @@
 
             <div class="fila">
 
-                <button>Todas las reservas</button>
-                <button>Reservas por día</button>
-
-                <input type="date">
-
-                <input type="search" placeholder="Buscar cliente...">
+                <a>Gestion Reservas</a>
+                <a>Reservas por día</a>
+                <a>Clientes</a>
+                <a>Configuracion de mesas</a>
+                <a>Estadísticas</a>
+                <a>Nueva Reserva</a>
 
             </div>
             <button id="cerrarSesion">Salir</button>
@@ -56,6 +56,14 @@
                         <option value ="cancelada">Cancelada</option>
                         <option value ="no-show">No-show</option>
                         <option value ="pasada">Pasada</option>
+                    </select>
+
+                    
+                </form>
+                <form>
+                    <select id="filtroReservas">
+                        <option>Orden hecha</option>
+                        <option>Orden reserva</option>
                     </select>
                 </form>
                 <div class="badge" id="numReservas">
@@ -116,8 +124,20 @@
 
         </section>
         <section class="info-cliente">
-            <div class="header">
+            <div class="header columna">
                 <h2>Cliente Info</h2>
+                <p>Id</p>
+                <p>prefijo</p>
+                <p>telefojo</p>
+                <p>correo</p>
+                <p>nombre</p>
+                <p>nacionalidad</p>
+                <p>puntuacion</p>
+                <p>comentariosMios</p>
+                <p>numero cancelaciones</p>
+                <p>numero no-show</p>
+                <p>numero reservas</p>
+                <p>ultima visita</p>
             </div>
 
 
@@ -125,7 +145,7 @@
         </div>
 
     </main>
-    <script src="./reservas.js"></script>
+    <script src="./js/reservas.js"></script>
 </body>
 
 </html>

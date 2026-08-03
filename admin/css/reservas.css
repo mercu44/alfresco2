@@ -63,11 +63,34 @@ body{
 
 a{
 
+    background:var(--yellow);
     text-decoration:none;
 
-    color:inherit;
+    color:#222;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:14px 24px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
 
 }
+
+a:hover{
+
+
+    filter:brightness(1.10);
+
+}
+
 
 
 /*=========================================================
@@ -137,6 +160,8 @@ main{
     justify-content: center;
     align-items: center;
     flex:1;
+
+    height: 80vh;
 
     background:var(--panel);
 
