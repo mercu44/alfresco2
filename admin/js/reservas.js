@@ -126,7 +126,9 @@ function mostrarPanelCliente(cliente){
 }
 function mostrarPanelEditarReserva(reserva,cliente){
     const editarReserva = document.getElementById("panel");
-    console.log(reserva.fecha);
+    let fechaFormateada = reserva.fecha.slice(0,10);
+    console.log(fechaFormateada);
+
     editarReserva.innerHTML = `
         <h2>Editar Reserva</h2>
             <div class="editarContenedor" >
@@ -163,7 +165,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                         <label>Fecha</label>
                         <input type="date"
                         id="editarFechaReserva"
-                        value = "${reserva.fecha}.slice(0,10)"
+                        value = "{$fechaFormateada}"
                         >   
                     </div>
                     <div class="editarItem">
