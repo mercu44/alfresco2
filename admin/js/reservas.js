@@ -126,8 +126,9 @@ function mostrarPanelCliente(cliente){
 }
 function mostrarPanelEditarReserva(reserva,cliente){
     const editarReserva = document.getElementById("panel");
+    console.log(reserva.fecha);
     editarReserva.innerHTML = `
-        <h2>Editar Cliente</h2>
+        <h2>Editar Reserva</h2>
             <div class="editarContenedor" >
                 <form class="formEditar">
                     <div class="editarItem">
@@ -235,7 +236,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
     
     
     
-    `
+    `;
 }
 async function cambiarEstadoReserva(id,estado){
     try{
