@@ -136,21 +136,77 @@
             </section>
 
         </section>
-        <section class="info-cliente columna" >
-                <h2>Cliente Info</h2>
-            <div class="header columna" id="infoCliente">
-                <p>Id</p>
-                <p>prefijo</p>
-                <p>telefojo</p>
-                <p>correo</p>
-                <p>nombre</p>
-                <p>nacionalidad</p>
-                <p>puntuacion</p>
-                <p>comentariosMios</p>
-                <p>numero cancelaciones</p>
-                <p>numero no-show</p>
-                <p>numero reservas</p>
-                <p>ultima visita</p>
+        <section class="panel columna" >
+                <h2>Editar Reserva</h2>
+            <div class="editarContenedor" id="panel">
+                <form class="formEditar">
+                    <div class="editarItem">
+                        <label>id</label>
+                        <p id="editarIdReserva"></p>
+                    </div>
+                    <div class="editarItem">
+                        <label>Cliente Id</label>
+                        <input type="text" id="editarIdClienteReserva"></input>
+                    </div>
+                    <div class="editarItem">
+                        <label>Nombre Cliente</label>
+                        <p id="editarNombreClienteReserva"></p>
+                    </div>
+                    <div class="editarItem">
+                        <label>Mesa</label>
+                        <input type="text" id="editarMesaReserva">
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha</label>
+                        <input type="date" id="editarFechaReserva">   
+                    </div>
+                    <div class="editarItem">
+                        <label>hora inicio</label>
+                        <input type="text" id="editarHoraInicioReserva">
+                    </div>
+                    <div class="editarItem">
+                        <label>hora fin</label>
+                        <input type="text" id="editarHoraFinReserva">  
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha Creacion</label>
+                        <p id="fechaCreacionReserva"></p>
+                        
+                    </div>
+                    <div class="editarItem">
+                        <label>Estado</label>
+                            <select >
+                                <option value="pendiente">pendiente</option>
+                                <option value="denegada">denegada</option>
+                                <option value="lista-espera">lista espera</option>
+                                <option value="hecha">hecha</option>
+                                <option value="confirmada">confirmada</option>
+                                <option value="cancelada">cancelada</option>
+                                <option value="no-show">no-show</option>
+                                <option value="pasada">pasada</option>
+                                <option value="eliminada">eliminada</option>
+                            </select>
+                        
+                    </div>
+                    <div class="editarItem">
+                        <label>token</label>
+                        <p id="tokenReserva"></p>
+                    </div>
+                    <div class="editarItem">
+                       <label>tipo Reserva</label>
+                        <select>
+                            <option value="web">web</option>
+                            <option value="whatsapp">whatsapp</option>
+                            <option value="llamada">llamada</option>
+                        </select>
+                    </div>
+                    <div class="editarItem">
+                            <label>Personas</label>
+                        <input type="text">
+                    </div>
+ 
+                    <button>Editar</button>
+                </form>
             </div>
 
 

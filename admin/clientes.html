@@ -107,23 +107,78 @@
             </section>
 
         </section>
-        <section class="info-cliente columna" >
-                <h2>Cliente Editar</h2>
-            <div class="header columna" id="infoCliente">
-                <p>Id</p>
-                <p>prefijo</p>
-                <p>telefojo</p>
-                <p>correo</p>
-                <p>nombre</p>
-                <p>nacionalidad</p>
-                <p>puntuacion</p>
-                <p>comentariosMios</p>
-                <p>numero cancelaciones</p>
-                <p>numero no-show</p>
-                <p>numero reservas</p>
-                <p>ultima visita</p>
+        <section class="panel columna" id="panel">
+                <h2>Editar Cliente</h2>
+            <div class="editarContenedor" >
+                <form class="formEditar">
+                    <div class="editarItem">
+                        <label>id</label>
+                        <input type="text" id="idReserva" readonly>
+                    </div>
+                    <div class="editarItem">
+                        <label>Cliente Id</label>
+                        <input type="text" id="editarIdClienteReserva"></input>
+                    </div>
+                    <div class="editarItem">
+                        <label>Nombre Cliente</label>
+                        <input type="text" id="editarNombreClienteReserva" readonly>
+                    </div>
+                    <div class="editarItem">
+                        <label>Mesa</label>
+                        <input type="text" id="editarMesaReserva">
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha</label>
+                        <input type="date" id="editarFechaReserva">   
+                    </div>
+                    <div class="editarItem">
+                        <label>hora inicio</label>
+                        <input type="text" id="editarHoraInicioReserva">
+                    </div>
+                    <div class="editarItem">
+                        <label>hora fin</label>
+                        <input type="text" id="editarHoraFinReserva">  
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha Creacion</label>
+                        <input type="text" id="fechaCreacionReserva" readonly>
+                    </div>
+                    <div class="editarItem">
+                        <label>Estado</label>
+                        <select id="editarEstadoReservaSelect">
+                            <option value="pendiente">pendiente</option>
+                            <option value="denegada">denegada</option>
+                            <option value="lista-espera">lista espera</option>
+                            <option value="hecha">hecha</option>
+                            <option value="confirmada">confirmada</option>
+                            <option value="cancelada">cancelada</option>
+                            <option value="no-show">no-show</option>
+                            <option value="pasada">pasada</option>
+                            <option value="eliminada">eliminada</option>
+                        </select>
+                        
+                    </div>
+                    <div class="editarItem">
+                        <label>token</label>
+                        <input type="text" id="tokenReserva" readonly>
+                        
+                    </div>
+                    <div class="editarItem">
+                       <label>tipo Reserva</label>
+                        <select id="editarTipoReservaSelect">
+                            <option value="web">web</option>
+                            <option value="whatsapp">whatsapp</option>
+                            <option value="llamada">llamada</option>
+                        </select>
+                    </div>
+                    <div class="editarItem">
+                            <label>Personas</label>
+                            <input type="text" id="editarPersonasReserva">
+                    </div>
+ 
+                    <button>Editar</button>
+                </form>
             </div>
-            <button>Guardar</button>
 
 
         </section>

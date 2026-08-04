@@ -105,24 +105,137 @@ async function cargarReservas(estado, orden) {
         `;
     }
 }
-function crearClienteInfo(cliente){
-    const infoCliente = document.getElementById("infoCliente");
+function mostrarPanelCliente(cliente){
+    const infoCliente = document.getElementById("panel");
     infoCliente.innerHTML = ` 
-        <p>Id: ${cliente.id}</p>
-        <p>telefono:+${cliente.prefijo} ${cliente.telefono}</p>
-        <p>correo: ${cliente.correo}</p>
-        <p>nombre: ${cliente.nombre}</p>
-        <p>nacionalidad: ${cliente.nacionalidad}</p>
-        <p>puntuacion: ${cliente.puntuacion}</p>
-        <p>comentariosMios: ${cliente.comentarios}</p>
-        <p>numero cancelaciones</p>
-        <p>numero no-show</p>
-        <p>numero reservas</p>
-        <p>ultima visita</p>
+        <h2>Editar Cliente</h2>
+        <div class="editarContenedor">
+            <p>Id: ${cliente.id}</p>
+            <p>telefono:${cliente.prefijo} ${cliente.telefono}</p>
+            <p>correo: ${cliente.correo}</p>
+            <p>nombre: ${cliente.nombre}</p>
+            <p>nacionalidad: ${cliente.nacionalidad}</p>
+            <p>puntuacion: ${cliente.puntuacion}</p>
+            <p>comentariosMios: ${cliente.comentarios}</p>
+            <p>numero cancelaciones</p>
+            <p>numero no-show</p>
+            <p>numero reservas</p>
+            <p>ultima visita</p>
+        </div>
     `
+}
+function mostrarPanelEditarReserva(reserva,cliente){
+    const editarReserva = document.getElementById("panel");
+    editarReserva.innerHTML = `
+        <h2>Editar Cliente</h2>
+            <div class="editarContenedor" >
+                <form class="formEditar">
+                    <div class="editarItem">
+                        <label>id</label>
+                        <input type="text"
+                        id="idReserva"
+                        value = ${reserva.id}
+                        readonly>
+                    </div>
+                    <div class="editarItem">
+                        <label>Cliente Id</label>
+                        <input type="text"
+                        id="editarIdClienteReserva"
+                        value = ${reserva.cliente_id}
+                         >
+                    </div>
+                    <div class="editarItem">
+                        <label>Nombre Cliente</label>
+                        <input type="text" 
+                        id="editarNombreClienteReserva"
+                        value= ${cliente.nombre}
+                        readonly>
+                    </div>
+                    <div class="editarItem">
+                        <label>Mesa</label>
+                        <input type="text" 
+                        id="editarMesaReserva"
+                        value = ${reserva.mesa_id}
+                        >
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha</label>
+                        <input type="date"
+                        id="editarFechaReserva"
+                        value = ${reserva.fecha}
+                        >   
+                    </div>
+                    <div class="editarItem">
+                        <label>hora inicio</label>
+                        <input type="text" 
+                        id="editarHoraInicioReserva"
+                        value = ${reserva.hora_inicio}
+                        >
+                    </div>
+                    <div class="editarItem">
+                        <label>hora fin</label>
+                        <input type="text" 
+                        id="editarHoraFinReserva"
+                        value = ${reserva.hora_fin}
+                        >  
+                    </div>
+                    <div class="editarItem">
+                        <label>Fecha Creacion</label>
+                        <input type="text"
+                        value = ${reserva.fecha_creacion}
+                         id="fechaCreacionReserva" 
+                         readonly
+                         >
+                    </div>
+                    <div class="editarItem">
+                        <label>Estado</label>
+                        <select id="editarEstadoReservaSelect">
+                            <option value= ${reserva.estado} selected disabled>${reserva.estado}</option>
+                            <option value="pendiente">pendiente</option>
+                            <option value="denegada">denegada</option>
+                            <option value="lista-espera">lista espera</option>
+                            <option value="hecha">hecha</option>
+                            <option value="confirmada">confirmada</option>
+                            <option value="cancelada">cancelada</option>
+                            <option value="no-show">no-show</option>
+                            <option value="pasada">pasada</option>
+                            <option value="eliminada">eliminada</option>
+                        </select>
+                        
+                    </div>
+                    <div class="editarItem">
+                        <label>token</label>
+                        <input type="text"
+                        value = ${reserva.token}
+                        id="tokenReserva" 
+                        readonly>
+                        
+                    </div>
+                    <div class="editarItem">
+                       <label>tipo Reserva</label>
+                        <select id="editarTipoReservaSelect">
+                            <option value = ${reserva.tipo_reserva} selected disabled>${reserva.tipo_reserva}</option>
+                            <option value="web">web</option>
+                            <option value="whatsapp">whatsapp</option>
+                            <option value="llamada">llamada</option>
+                        </select>
+                    </div>
+                    <div class="editarItem">
+                            <label>Personas</label>
+                            <input type="text"
+                            id="editarPersonasReserva"
+                            value= ${reserva.personas}
+                            >
+                    </div>
+ 
+                    <button>Editar</button>
+                </form>
+            </div>
 
-
-
+    
+    
+    
+    `
 }
 async function cambiarEstadoReserva(id,estado){
     try{
@@ -227,7 +340,10 @@ function crearTarjeta(reserva, cliente) {
     })
 
     clienteInfo.addEventListener("click", ()=>{
-        crearClienteInfo(cliente);
+        mostrarPanelCliente(cliente);
+    })
+    editarReserva.addEventListener("click",()=>{
+        mostrarPanelEditarReserva(reserva,cliente);
     })
 
     return tarjeta;

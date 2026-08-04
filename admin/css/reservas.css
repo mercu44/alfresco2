@@ -161,7 +161,7 @@ main{
     padding:25px;
 
 }
-.info-cliente{
+.panel{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,7 +238,27 @@ select:focus{
     border:2px solid var(--yellow);
 
 }
+.editarContenedor{
+    width: 60%;
 
+}
+.formEditar{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    width: 100%;
+    justify-content: center;
+    
+
+}
+.formEditar input{
+    padding: 7px;
+}
+.editarItem{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+}
 
 /*=========================================================
     BOTONES
