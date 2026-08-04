@@ -126,7 +126,7 @@ function mostrarPanelCliente(cliente){
 }
 function mostrarPanelEditarReserva(reserva,cliente){
     const editarReserva = document.getElementById("panel");
-    let fechaFormateada = reserva.fecha.slice(0,10);
+    let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
     console.log(fechaFormateada);
 
     editarReserva.innerHTML = `
