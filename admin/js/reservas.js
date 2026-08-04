@@ -165,7 +165,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                         <label>Fecha</label>
                         <input type="date"
                         id="editarFechaReserva"
-                        value = "{$fechaFormateada}"
+                        value = "${fechaFormateada}"
                         >   
                     </div>
                     <div class="editarItem">
