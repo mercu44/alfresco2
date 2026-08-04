@@ -134,55 +134,55 @@ function mostrarPanelEditarReserva(reserva,cliente){
                         <label>id</label>
                         <input type="text"
                         id="idReserva"
-                        value = ${reserva.id}
+                        value = "${reserva.id}"
                         readonly>
                     </div>
                     <div class="editarItem">
                         <label>Cliente Id</label>
                         <input type="text"
                         id="editarIdClienteReserva"
-                        value = ${reserva.cliente_id}
+                        value = "${reserva.cliente_id}"
                          >
                     </div>
                     <div class="editarItem">
                         <label>Nombre Cliente</label>
                         <input type="text" 
                         id="editarNombreClienteReserva"
-                        value= ${cliente.nombre}
+                        value= "${cliente.nombre}"
                         readonly>
                     </div>
                     <div class="editarItem">
                         <label>Mesa</label>
                         <input type="text" 
                         id="editarMesaReserva"
-                        value = ${reserva.mesa_id}
+                        value = "${reserva.mesa_id}"
                         >
                     </div>
                     <div class="editarItem">
                         <label>Fecha</label>
                         <input type="date"
                         id="editarFechaReserva"
-                        value = ${reserva.fecha}
+                        value = "${reserva.fecha}.slice(0,10)"
                         >   
                     </div>
                     <div class="editarItem">
                         <label>hora inicio</label>
                         <input type="text" 
                         id="editarHoraInicioReserva"
-                        value = ${reserva.hora_inicio}
+                        value = "${reserva.hora_inicio}"
                         >
                     </div>
                     <div class="editarItem">
                         <label>hora fin</label>
                         <input type="text" 
                         id="editarHoraFinReserva"
-                        value = ${reserva.hora_fin}
+                        value = "${reserva.hora_fin}"
                         >  
                     </div>
                     <div class="editarItem">
                         <label>Fecha Creacion</label>
                         <input type="text"
-                        value = ${reserva.fecha_creacion}
+                        value = "${reserva.fecha_creacion}"
                          id="fechaCreacionReserva" 
                          readonly
                          >
@@ -206,7 +206,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                     <div class="editarItem">
                         <label>token</label>
                         <input type="text"
-                        value = ${reserva.token}
+                        value = "${reserva.token}"
                         id="tokenReserva" 
                         readonly>
                         
@@ -224,7 +224,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                             <label>Personas</label>
                             <input type="text"
                             id="editarPersonasReserva"
-                            value= ${reserva.personas}
+                            value= "${reserva.personas}"
                             >
                     </div>
  
