@@ -108,7 +108,7 @@ async function cargarReservas(estado, orden) {
     }
 }
 
-async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
+async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
     try{
         const resultado = await fetch((`${API}/reservas/modificarReserva`),{
             method: "PUT",
@@ -298,7 +298,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
 
 
     botonReserva.addEventListener("click", ()=>{
-        editarReserva(
+        modificarReserva(
             idReserva.value,
             editarIdClienteReserva.value,
             editarMesaReserva.value,
