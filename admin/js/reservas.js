@@ -170,7 +170,7 @@ function mostrarPanelCliente(cliente){
 }
 function mostrarPanelEditarReserva(reserva,cliente){
     const editarReserva = document.getElementById("panel");
-    let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
+    //let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
 
     editarReserva.innerHTML = `
         <h2>Editar Reserva</h2>
@@ -288,7 +288,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
     editarIdClienteReserva.value = reserva.cliente_id;
     editarNombreClienteReserva.value = cliente.nombre;
     editarMesaReserva.value = reserva.mesa_id ?? "";
-    editarFechaReserva.value = fechaFormateada;
+    editarFechaReserva.value = reserva.fecha.slice(0, 10);
     editarHoraInicioReserva.value = reserva.hora_inicio;
     editarHoraFinReserva.value = reserva.hora_fin ?? "";
     fechaCreacionReserva.value = reserva.fecha_creacion;
@@ -392,9 +392,13 @@ function crearTarjeta(reserva, cliente) {
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
-        await cambiarEstadoReserva(reserva.id,"pasada")
+        await cambiarEstadoReserva(reserva.id,"denegada")
         await cargarReservas(estadoS, filtro);
 
+    })
+    archivarReserva.addEventListener("click", async()=>{
+        await cambiarEstadoReserva(reserva.id, "archivada");
+        await cargarReservas(estadoS, filtro);
     })
 
     clienteInfoPanel.addEventListener("click", ()=>{
