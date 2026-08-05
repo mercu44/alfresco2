@@ -47,7 +47,7 @@ estadoFormulario.addEventListener("change", ()=>{
 
 async function cargarReservas(estado, orden) {
     try {
-
+        console.log(`cargando Reservas, Estado: ${estado}, orden: ${orden}`)
         const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -389,13 +389,13 @@ function crearTarjeta(reserva, cliente) {
 
     aceptarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"hecha");
-        console.log(`aceptarReserva : ${reserva.id}, ${estadosS}, ${filtro}`)
+        console.log(`aceptarReserva : ${reserva.id}, ${estadoS}, ${filtro}`)
         await cargarReservas(estadoS, filtro);
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"pasada")
-        console.log(`rechazarReserva : ${reserva.id}, ${estadosS}, ${filtro}`)
+        console.log(`rechazarReserva : ${reserva.id}, ${estadoS}, ${filtro}`)
 
         location.reload();
         await cargarReservas(estadoS, filtro);
