@@ -272,7 +272,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
 }
 async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
     try{
-        const resultado = await fetch((`${API}/reservas/editarReserva`),{
+        const resultado = await fetch((`${API}/reservas/modificarReserva`),{
             method: "PUT",
             headers:{
                 Authorization : `Bearer ${token}`,
