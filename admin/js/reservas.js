@@ -369,7 +369,7 @@ function crearTarjeta(reserva, cliente) {
         <div class="submenu">
             <button class="btnSubmenu greyBack btnClienteInfoPanel">Cliente info</button>
             <button class="btnSubmenu orangeBack btnEditarReservaPanel">Editar Reserva</button>
-            <button class="btnSubmenu greenBack btnAceptarReservaPanel">Aceptar</button>
+            <button class="btnSubmenu greenBack btnAceptarReserva">Aceptar</button>
             <button class="btnSubmenu redBack btnRechazarReserva">Rechazar</button>
             <button class="btnSubmenu blueBack btnArchivarReserva">Archivar</button>
         </div>
