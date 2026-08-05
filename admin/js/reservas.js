@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const filtroFormulario = document.getElementById("filtroForm");
 let estadoS = "pendiente";
 let filtro;
+cargarReservas("pendiente", "ohr");
+
 const filtroSelect = document.getElementById("filtroSelect")
 filtroFormulario.addEventListener("change", ()=>{
     estadoS = estadoSelect.value;
@@ -127,7 +129,6 @@ function mostrarPanelCliente(cliente){
 function mostrarPanelEditarReserva(reserva,cliente){
     const editarReserva = document.getElementById("panel");
     let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
-    console.log(fechaFormateada);
 
     editarReserva.innerHTML = `
         <h2>Editar Reserva</h2>
@@ -137,55 +138,49 @@ function mostrarPanelEditarReserva(reserva,cliente){
                         <label>id</label>
                         <input type="text"
                         id="idReserva"
-                        value = "${reserva.id}"
                         readonly>
                     </div>
                     <div class="editarItem">
                         <label>Cliente Id</label>
                         <input type="text"
                         id="editarIdClienteReserva"
-                        value = "${reserva.cliente_id}"
                          >
                     </div>
                     <div class="editarItem">
                         <label>Nombre Cliente</label>
                         <input type="text" 
                         id="editarNombreClienteReserva"
-                        value= "${cliente.nombre}"
+
                         readonly>
                     </div>
                     <div class="editarItem">
                         <label>Mesa</label>
                         <input type="text" 
                         id="editarMesaReserva"
-                        value = "${reserva.mesa_id}"
                         >
                     </div>
                     <div class="editarItem">
                         <label>Fecha</label>
                         <input type="text"
                         id="editarFechaReserva"
-                        value = ${fechaFormateada}
                         >   
                     </div>
                     <div class="editarItem">
                         <label>hora inicio</label>
                         <input type="text" 
                         id="editarHoraInicioReserva"
-                        value = "${reserva.hora_inicio}"
                         >
                     </div>
                     <div class="editarItem">
                         <label>hora fin</label>
                         <input type="text" 
                         id="editarHoraFinReserva"
-                        value = "${reserva.hora_fin}"
                         >  
                     </div>
                     <div class="editarItem">
                         <label>Fecha Creacion</label>
                         <input type="text"
-                        value = ${reserva.fecha_creacion}
+
                          id="fechaCreacionReserva" 
                          readonly
                          >
@@ -193,7 +188,6 @@ function mostrarPanelEditarReserva(reserva,cliente){
                     <div class="editarItem">
                         <label>Estado</label>
                         <select id="editarEstadoReservaSelect">
-                            <option value= ${reserva.estado} selected disabled>${reserva.estado}</option>
                             <option value="pendiente">pendiente</option>
                             <option value="denegada">denegada</option>
                             <option value="lista-espera">lista espera</option>
@@ -209,7 +203,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                     <div class="editarItem">
                         <label>token</label>
                         <input type="text"
-                        value = "${reserva.token}"
+
                         id="tokenReserva" 
                         readonly>
                         
@@ -217,7 +211,6 @@ function mostrarPanelEditarReserva(reserva,cliente){
                     <div class="editarItem">
                        <label>tipo Reserva</label>
                         <select id="editarTipoReservaSelect">
-                            <option value = ${reserva.tipo_reserva} selected disabled>${reserva.tipo_reserva}</option>
                             <option value="web">web</option>
                             <option value="whatsapp">whatsapp</option>
                             <option value="llamada">llamada</option>
@@ -227,19 +220,77 @@ function mostrarPanelEditarReserva(reserva,cliente){
                             <label>Personas</label>
                             <input type="text"
                             id="editarPersonasReserva"
-                            value= "${reserva.personas}"
                             >
                     </div>
  
-                    <button>Editar</button>
+                    <button type ="button" id="btnEditarReserva">Editar</button>
                 </form>
             </div>
-
-    
-    
-    
     `;
+    const idReserva = document.getElementById("idReserva");
+    const editarIdClienteReserva = document.getElementById("editarIdClienteReserva");
+    const editarNombreClienteReserva = document.getElementById("editarNombreClienteReserva");
+    const editarMesaReserva = document.getElementById("editarMesaReserva");
+    const editarFechaReserva = document.getElementById("editarFechaReserva");
+    const editarHoraInicioReserva = document.getElementById("editarHoraInicioReserva");
+    const editarHoraFinReserva = document.getElementById("editarHoraFinReserva");
+    const editarEstadoReservaSelect = document.getElementById("editarEstadoReservaSelect");
+    const editarTipoReservaSelect = document.getElementById("editarTipoReservaSelect");
+    const editarPersonasReserva = document.getElementById("editarPersonasReserva");
+    const tokenReserva = document.getElementById("tokenReserva");
+    const fechaCreacionReserva = document.getElementById("fechaCreacionReserva")
+    const botonReserva = document.getElementById("btnEditarReserva");
+    
+
+    idReserva.value = reserva.id;
+    editarIdClienteReserva.value = reserva.cliente_id;
+    editarNombreClienteReserva.value = cliente.nombre;
+    editarMesaReserva.value = reserva.mesa_id ?? "";
+    editarFechaReserva.value = fechaFormateada;
+    editarHoraInicioReserva.value = reserva.hora_inicio;
+    editarHoraFinReserva.value = reserva.hora_fin ?? "";
+    fechaCreacionReserva.value = reserva.fecha_creacion;
+    editarEstadoReservaSelect.value = reserva.estado;
+    tokenReserva.value = reserva.token;
+    editarTipoReservaSelect.value = reserva.tipo_reserva;
+    editarPersonasReserva.value = reserva.personas;
+
+
+    botonReserva.addEventListener("click", ()=>{
+        editarReserva(
+            idReserva.value,
+            editarIdClienteReserva.value,
+            editarMesaReserva.value,
+            editarFechaReserva.value,
+            editarHoraInicioReserva.value,
+            editarHoraFinReserva.value,
+            editarEstadoReservaSelect.value,
+            editarTipoReservaSelect.value,
+            editarPersonasReserva.value
+        )
+    })
 }
+async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
+    try{
+        const resultado = await fetch((`${API}/reservas/editarReserva`),{
+            method: "PUT",
+            headers:{
+                Authorization : `Bearer ${token}`,
+                "Content-Type" : "application/json"
+            }
+            ,
+            body : JSON.stringify({id,idCliente,idMesa,fecha, horaInicio, horaFin, estado, tipo, personas})
+        })
+        if(!resultado.ok){
+            throw new Error();
+        }
+        const datos = await resultado.json();
+    }catch(error){
+        console.error(error);
+    }
+}
+
+
 async function cambiarEstadoReserva(id,estado){
     try{
         const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
@@ -316,36 +367,36 @@ function crearTarjeta(reserva, cliente) {
             </div>
         </article>
         <div class="submenu">
-            <button class="btnSubmenu greyBack btnClienteInfo">Cliente info</button>
-            <button class="btnSubmenu orangeBack btnEditarReserva">Editar Reserva</button>
-            <button class="btnSubmenu greenBack btnAceptarReserva">Aceptar</button>
+            <button class="btnSubmenu greyBack btnClienteInfoPanel">Cliente info</button>
+            <button class="btnSubmenu orangeBack btnEditarReservaPanel">Editar Reserva</button>
+            <button class="btnSubmenu greenBack btnAceptarReservaPanel">Aceptar</button>
             <button class="btnSubmenu redBack btnRechazarReserva">Rechazar</button>
             <button class="btnSubmenu blueBack btnArchivarReserva">Archivar</button>
         </div>
         
     `;
     const item = tarjeta.querySelector(".item");
-    const clienteInfo = tarjeta.querySelector(".btnClienteInfo");
-    const editarReserva = tarjeta.querySelector(".btnEditarReserva");
+    const clienteInfoPanel = tarjeta.querySelector(".btnClienteInfoPanel");
+    const editarReservaPanel = tarjeta.querySelector(".btnEditarReservaPanel");
     const aceptarReserva = tarjeta.querySelector(".btnAceptarReserva");
     const rechazarReserva = tarjeta.querySelector(".btnRechazarReserva");
     const archivarReserva = tarjeta.querySelector(".btnArchivarReserva");
 
     aceptarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"hecha");
-        cargarReservas(estadoS, filtro);
+        await cargarReservas(estadoS, filtro);
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"pasada")
-        cargarReservas(estadoS, filtro);
+        await cargarReservas(estadoS, filtro);
 
     })
 
-    clienteInfo.addEventListener("click", ()=>{
+    clienteInfoPanel.addEventListener("click", ()=>{
         mostrarPanelCliente(cliente);
     })
-    editarReserva.addEventListener("click",()=>{
+    editarReservaPanel.addEventListener("click",()=>{
         mostrarPanelEditarReserva(reserva,cliente);
     })
 
