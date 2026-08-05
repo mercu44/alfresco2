@@ -294,7 +294,7 @@ async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, 
 async function cambiarEstadoReserva(id,estado){
     try{
         const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
-            method: "POST",
+            method: "PUT",
             headers:{
                 Authorization : `Bearer ${token}`,
                 "Content-Type": "application/json"
