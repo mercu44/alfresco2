@@ -107,6 +107,47 @@ async function cargarReservas(estado, orden) {
         `;
     }
 }
+
+async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
+    try{
+        const resultado = await fetch((`${API}/reservas/modificarReserva`),{
+            method: "PUT",
+            headers:{
+                Authorization : `Bearer ${token}`,
+                "Content-Type" : "application/json"
+            }
+            ,
+            body : JSON.stringify({id,idCliente,idMesa,fecha, horaInicio, horaFin, estado, tipo, personas})
+        })
+        if(!resultado.ok){
+            throw new Error();
+        }
+        const datos = await resultado.json();
+    }catch(error){
+        console.error(error);
+    }
+}
+async function cambiarEstadoReserva(id,estado){
+    try{
+        const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
+            method: "PUT",
+            headers:{
+                Authorization : `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+            ,
+            body: JSON.stringify({id,estado})
+        });
+        if(!resultado.ok){
+            throw new Error();
+        }
+        const datos = await resultado.json();
+
+    }catch(error){
+        console.error(error);
+    }
+
+}
 function mostrarPanelCliente(cliente){
     const infoCliente = document.getElementById("panel");
     infoCliente.innerHTML = ` 
@@ -270,48 +311,10 @@ function mostrarPanelEditarReserva(reserva,cliente){
         )
     })
 }
-async function editarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
-    try{
-        const resultado = await fetch((`${API}/reservas/modificarReserva`),{
-            method: "PUT",
-            headers:{
-                Authorization : `Bearer ${token}`,
-                "Content-Type" : "application/json"
-            }
-            ,
-            body : JSON.stringify({id,idCliente,idMesa,fecha, horaInicio, horaFin, estado, tipo, personas})
-        })
-        if(!resultado.ok){
-            throw new Error();
-        }
-        const datos = await resultado.json();
-    }catch(error){
-        console.error(error);
-    }
-}
 
 
-async function cambiarEstadoReserva(id,estado){
-    try{
-        const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
-            method: "PUT",
-            headers:{
-                Authorization : `Bearer ${token}`,
-                "Content-Type": "application/json"
-            }
-            ,
-            body: JSON.stringify({id,estado})
-        });
-        if(!resultado.ok){
-            throw new Error();
-        }
-        const datos = await resultado.json();
 
-    }catch(error){
-        console.error(error);
-    }
 
-}
 function crearTarjeta(reserva, cliente) {
     const fecha = new Date(reserva.fecha);
 
