@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const filtroFormulario = document.getElementById("filtroForm");
 let estadoS = "pendiente";
-let filtro;
+let filtro = "ohr";
 cargarReservas("pendiente", "ohr");
 
 const filtroSelect = document.getElementById("filtroSelect")
@@ -384,11 +384,14 @@ function crearTarjeta(reserva, cliente) {
 
     aceptarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"hecha");
+        console.log(estadoS);
+        console.log(filtro);
         await cargarReservas(estadoS, filtro);
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"pasada")
+        location.reload
         await cargarReservas(estadoS, filtro);
 
     })
