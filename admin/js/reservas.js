@@ -203,7 +203,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
                     </div>
                     <div class="editarItem">
                         <label>Fecha</label>
-                        <input type="text"
+                        <input type="date"
                         id="editarFechaReserva"
                         >   
                     </div>
@@ -304,8 +304,8 @@ function mostrarPanelEditarReserva(reserva,cliente){
             editarIdClienteReserva.value,
             editarMesaReserva.value,
             editarFechaReserva.value,
-            editarHoraInicioReserva.value,
-            editarHoraFinReserva.value,
+            editarHoraInicioReserva.value || null,
+            editarHoraFinReserva.value || null,
             editarEstadoReservaSelect.value,
             editarTipoReservaSelect.value,
             editarPersonasReserva.value
