@@ -47,7 +47,6 @@ estadoFormulario.addEventListener("change", ()=>{
 
 async function cargarReservas(estado, orden) {
     try {
-        console.log(`cargando Reservas, Estado: ${estado}, orden: ${orden}`)
         const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -129,7 +128,6 @@ async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFi
 }
 async function cambiarEstadoReserva(id,estado){
     try{
-        console.log(`cambiarEstadoReserva: id: ${id} estado: ${estado}`);
         const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
             method: "PUT",
             headers:{
@@ -139,6 +137,7 @@ async function cambiarEstadoReserva(id,estado){
             ,
             body: JSON.stringify({id,estado})
         });
+        console.log("status:",resultado.status)
         if(!resultado.ok){
             throw new Error();
         }
@@ -160,7 +159,7 @@ function mostrarPanelCliente(cliente){
             <p>correo: ${cliente.correo}</p>
             <p>nombre: ${cliente.nombre}</p>
             <p>nacionalidad: ${cliente.nacionalidad}</p>
-            <p>puntuacion: ${cliente.puntuacion}</p>
+            <p>puntuacion: ${cliente.score}</p>
             <p>comentariosMios: ${cliente.comentarios}</p>
             <p>numero cancelaciones</p>
             <p>numero no-show</p>
@@ -389,15 +388,11 @@ function crearTarjeta(reserva, cliente) {
 
     aceptarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"hecha");
-        console.log(`aceptarReserva : ${reserva.id}, ${estadoS}, ${filtro}`)
         await cargarReservas(estadoS, filtro);
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"pasada")
-        console.log(`rechazarReserva : ${reserva.id}, ${estadoS}, ${filtro}`)
-
-        location.reload();
         await cargarReservas(estadoS, filtro);
 
     })
