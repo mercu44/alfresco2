@@ -410,3 +410,8 @@ function crearTarjeta(reserva, cliente) {
 
     return tarjeta;
 }
+
+module.exports = {
+    crearTarjeta,
+    
+}

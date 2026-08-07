@@ -98,6 +98,9 @@ a:hover{
 .en-proceso{
     background-color: rgb(255, 204, 110);
 }
+.actual{
+    background-color: rgb(110, 144, 255);
+}
 
 /*=========================================================
     LAYOUT
@@ -774,6 +777,143 @@ hr{
 
 }
 
+
+.mapa{
+    position: relative;
+    width: 700px;
+    height: 900px;
+    background: white;
+    border: 3px solid #333;
+}
+
+
+
+.mesa{
+    position:absolute;
+    background:#bdbdbd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    user-select:none;
+}
+
+.redonda{
+    border-radius:50%;
+}
+
+.cuadrada{
+    width:70px;
+    height:55px;
+}
+
+.rectangular{
+    width:120px;
+    height:55px;
+}
+
+.rombo{
+    width:70px;
+    height:70px;
+    transform:rotate(45deg);
+}
+
+.rombo span{
+    transform:rotate(-45deg);
+}
+
+.j10{
+    width:100px;
+    height:100px;
+    top:20px;
+    left:85px;
+}
+
+.ext{
+    width:60px;
+    height:60px;
+    top:55px;
+    left:350px;
+}
+
+.j9{
+    top:170px;
+    left:20px;
+}
+
+.j7{
+    top:170px;
+    left:180px;
+}
+
+.m106{
+    top:170px;
+    left:360px;
+}
+
+.j6{
+    width:120px;
+    height:120px;
+    top:140px;
+    left:520px;
+}
+
+.j8{
+    top:290px;
+    left:180px;
+}
+
+.j5{
+    top:290px;
+    left:530px;
+}
+
+.j1{
+    top:460px;
+    left:180px;
+}
+
+.j2{
+    width:60px;
+    height:100px;
+    top:440px;
+    left:320px;
+}
+
+.j3{
+    top:460px;
+    left:470px;
+}
+
+.j4{
+    top:400px;
+    left:580px;
+}
+
+
+.pared{
+    position:absolute;
+    background:#2d2b31;
+}
+
+.superior{
+    top:0;
+    left:0;
+    width:100%;
+    height:20px;
+}
+
+.derecha{
+    right:0;
+    top:0;
+    width:20px;
+    height:100%;
+}
+
+.terraza{
+    position:absolute;
+    background:#f7e2b3;
+}
 
 /*=========================================================
     RESPONSIVE

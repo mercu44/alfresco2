@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas · Alfresco</title>
+    <link rel="stylesheet" href="./css/reservas.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+        <aside class="sidebar">
+
+            <div class="header">
+                <h1>Reservas</h1>
+            </div>
+
+            <div class="fila">
+
+                <a class="en-proceso" href="./reservas.html">Gestion Reservas</a>
+                <a class="actual">Reservas por día</a>
+                <a class="en-proceso" href="./clientes.html">Clientes</a>
+                <a class="no-implementado">Configuracion de mesas</a>
+                <a class="no-implementado">Estadísticas</a>
+                <a class="no-implementado">Nueva Reserva</a>
+
+            </div>
+            <button id="cerrarSesion">Salir</button>
+
+
+        </aside>
+
+        <!-- ========================= -->
+        <!-- CONTENIDO -->
+        <!-- ========================= -->
+         <div class="contenedor">
+        <section class="info-reserva">
+
+            <div class="header">
+                <h2>Reservas</h2>
+                <form class="fila">
+                    <label>Dia</label>
+                    <input type="date">
+                </form>
+                <div class="columna">
+                    <form id="estadoForm">
+                        <select id="estadoSelect">
+                            <option value ="pendiente" selected>Pendiente</option>
+                            <option value ="hecha">Hecha</option>
+                            <option value ="confirmada">Confirmada</option>
+                            <option value ="denegada">Denegada</option>
+                            <option value ="cancelada">Cancelada</option>
+                            <option value ="no-aparecida">No Aparecida</option>
+                            <option value ="lista-espera">Lista Espera</option>
+                            <option value ="pasada">Pasada</option>
+                            <option value ="archivada">Archivada</option>
+                            <option value ="eliminada">Eliminada</option>
+                        </select>
+
+                        
+                    </form>
+                    <form id="filtroForm">
+                        <select id="filtroSelect">
+                            <option value="ohr" selected>Orden hecha: mas recientes</option>
+                            <option value="oha">Orden hecha: mas antiguas</option>
+
+                            <option value="orr">Orden reserva: mas recientes</option>
+                            <option value="ora">Orden reserva: mas antiguas</option>
+
+                        </select>
+                    </form>
+                </div>
+                <div class="badge" id="numReservas">
+                    12 reservas
+                </div>
+            </div>
+
+            <section class="lista" id="listaReservas">
+
+                <!-- RESERVA -->
+                <div class="item-wrapper">
+                    <article class="item">
+
+                        <div class="estado pendiente"></div>
+
+                        <div class="item-contenido">
+
+                            <div class="item-cliente">
+
+                                <h3>Alberto Blasco</h3>
+
+                                <span>+34 646736013</span>
+
+                                <span>albertoblascoo@gmail.com</span>
+
+                            </div>
+
+                            <div class="item-info">
+
+                                <span>
+                                    <i class="fa-solid fa-users"></i>
+                                    2 personas
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-table"></i>
+                                    j5
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-clock"></i>
+                                    16:00
+                                </span>
+
+                                <span class="badge">
+                                    WEB
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+                    <div class="submenu">
+                        <button class="btnSubmenu greyBack">Cliente info</button>
+                        <button class="btnSubmenu orangeBack">Editar Reserva</button>
+                        <button class="btnSubmenu greenBack">Aceptar</button>
+                        <button class="btnSubmenu redBack">Rechazar</button>
+                        <button class="btnSubmenu blueBack">Archivar</button>
+                        
+                    </div>
+                </div>
+
+               
+
+            </section>
+
+        </section>
+        <section class="panel columna" id="panel" >
+            <h2>Mesas</h2>
+            
+                <div class="mapa">
+                    <div class="pared superior"></div>
+                    <div class="pared derecha"></div>
+                    <div class="mesa redonda j10">J10</div>
+                    <div class="mesa redonda ext">EXT</div>
+
+                    <div class="mesa cuadrada j9">J9</div>
+                    <div class="mesa rectangular j7">J7</div>
+                    <div class="mesa cuadrada m106">106</div>
+
+                    <div class="mesa redonda j6">J6</div>
+
+                    <div class="mesa cuadrada j8">J8</div>
+
+                    <div class="mesa rectangular j5">J5</div>
+
+                    <div class="mesa cuadrada j1">J1</div>
+                    <div class="mesa rectangular j2">J2</div>
+
+                    <div class="mesa rombo j3">J3</div>
+
+                    <div class="mesa cuadrada j4">J4</div>
+                    <div class="pared izquierda"></div>
+                    <div class="pared abajo"></div>
+                </div>
+        </section>
+        </div>
+
+    </main>
+    <script src="./js/reservasdia.js"></script>
+</body>
+
+</html>
