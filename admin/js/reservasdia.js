@@ -1,4 +1,4 @@
-const {crearTarjeta} = require("./reservas");
+import {crearTarjeta} from "./reservas";
 
 
 const API = window.location.hostname === "localhost"

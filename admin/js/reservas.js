@@ -316,7 +316,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
 
 
 
-function crearTarjeta(reserva, cliente) {
+export function crearTarjeta(reserva, cliente) {
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
@@ -411,7 +411,3 @@ function crearTarjeta(reserva, cliente) {
     return tarjeta;
 }
 
-module.exports = {
-    crearTarjeta,
-    
-}
