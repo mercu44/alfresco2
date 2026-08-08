@@ -317,6 +317,7 @@ function mostrarPanelEditarReserva(reserva,cliente){
 
 
 export function crearTarjeta(reserva, cliente) {
+    
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
@@ -324,8 +325,7 @@ export function crearTarjeta(reserva, cliente) {
     const hora = reserva.hora_inicio.slice(0, 5);
 
     let estadoReserva = reserva.estado;
-    console.log(estadoReserva);
-
+    console.log(`crear tarjeta: ${reserva.id} : ${cliente.id} : ${estadoReserva}`)
     if (reserva.lista_espera) {
         estado = "espera";
     }

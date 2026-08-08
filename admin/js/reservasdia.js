@@ -40,6 +40,7 @@ async function cargarReservasDia(fecha) {
         }
 
         let reservas = await respuesta.json();
+        console.log(`Reservas del dia: ${fecha}`)
         console.log(reservas);
         /*
         if(orden==="orr"){
@@ -64,7 +65,7 @@ async function cargarReservasDia(fecha) {
         }
         */ 
         reservas.sort((a, b) =>
-            a.reserva.hora_inicio.localeCompare(b.reserva.hora_inicio)
+            a.hora_inicio.localeCompare(b.hora_inicio)
         );
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
