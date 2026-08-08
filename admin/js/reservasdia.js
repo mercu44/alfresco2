@@ -1,4 +1,4 @@
-import {crearTarjeta} from "./reservas";
+import {crearTarjeta} from "./reservas.js";
 
 
 const API = window.location.hostname === "localhost"
@@ -12,15 +12,14 @@ const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
-const diaFormulario = document.getElementById("diaForm");
 const diaInput = document.getElementById("diaInput");
-
+const hoy = new Date();
 const fechaHoy = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
 console.log(fechaHoy);
 cargarReservasDia(fechaHoy);
 
 
-diaFormulario.addEventListener("change", ()=>{
+diaInput.addEventListener("change", ()=>{
     cargarReservasDia(diaInput.value);
 })
 
@@ -75,7 +74,7 @@ async function cargarReservasDia(fecha) {
             return;
         }
         reservas.forEach(({ reserva, cliente }) => {
-            listaReservas.appendChild(crearTarjeta(reserva, cliente,estado));
+            listaReservas.appendChild(crearTarjeta(reserva, cliente));
         });
 
     } catch (error) {

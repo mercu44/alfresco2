@@ -93,7 +93,7 @@ async function cargarReservas(estado, orden) {
             return;
         }
         reservas.forEach(({ reserva, cliente }) => {
-            listaReservas.appendChild(crearTarjeta(reserva, cliente,estado));
+            listaReservas.appendChild(crearTarjeta(reserva, cliente));
         });
 
     } catch (error) {
