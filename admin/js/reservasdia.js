@@ -1,3 +1,6 @@
+const {crearTarjeta} = require("./reservas");
+
+
 const API = window.location.hostname === "localhost"
     ? "http://localhost:3000/api"
     : "/api";
@@ -10,9 +13,9 @@ const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
 
-async function cargarReservas(estado, orden) {
+async function cargarReservasDia(fecha) {
     try {
-        const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
+        const respuesta = await fetch(`${API}/reservas?dia=${fecha}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
