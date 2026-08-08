@@ -29,7 +29,7 @@ diaFormulario.addEventListener("change", ()=>{
 
 async function cargarReservasDia(fecha) {
     try {
-        const respuesta = await fetch(`${API}/reservas?dia=${fecha}`, {
+        const respuesta = await fetch(`${API}/reservas/${fecha}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
