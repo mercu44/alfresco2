@@ -65,7 +65,7 @@ async function cargarReservasDia(fecha) {
         }
         */ 
         reservas.sort((a, b) =>
-            a.hora_inicio.localeCompare(b.hora_inicio)
+            a.reserva.hora_inicio.localeCompare(b.reserva.hora_inicio)
         );
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
