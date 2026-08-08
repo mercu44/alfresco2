@@ -24,7 +24,8 @@ diaInput.addEventListener("change", ()=>{
 })
 
 
-
+let estadoS = "pendiente";
+let filtro = "ohr";
 
 async function cargarReservasDia(fecha) {
     try {
@@ -40,7 +41,7 @@ async function cargarReservasDia(fecha) {
 
         let reservas = await respuesta.json();
         console.log(reservas);
-
+        /*
         if(orden==="orr"){
             reservas.sort((a,b) => 
             new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
@@ -61,8 +62,10 @@ async function cargarReservasDia(fecha) {
                 new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             );
         }
-
-        
+        */ 
+        reservas.sort((a,b) => 
+            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
+        );
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
         if (reservas.length === 0) {
