@@ -12,6 +12,20 @@ const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
+const diaFormulario = document.getElementById("diaForm");
+const diaInput = document.getElementById("diaInput");
+
+const fechaHoy = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+console.log(fechaHoy);
+cargarReservasDia(fechaHoy);
+
+
+diaFormulario.addEventListener("change", ()=>{
+    cargarReservasDia(diaInput.value);
+})
+
+
+
 
 async function cargarReservasDia(fecha) {
     try {
