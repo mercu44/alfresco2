@@ -150,10 +150,11 @@ export async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio,
         if(!resultado.ok){
             throw new Error();
         }
-        const datos = await resultado.json();
-        console.log("modificar reserva datos: "+datos.ok)
+        else return true;
     }catch(error){
         console.error(error);
+            return false;
+
     }
 }
 export async function cambiarEstadoReserva(id,estado){
@@ -299,6 +300,7 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
                     </div>
  
                     <button type ="button" id="btnEditarReserva">Editar</button>
+                    <p id="estadoOperacion"></p>
                 </form>
             </div>
     `;
@@ -315,7 +317,7 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
     const tokenReserva = document.getElementById("tokenReserva");
     const fechaCreacionReserva = document.getElementById("fechaCreacionReserva")
     const botonReserva = document.getElementById("btnEditarReserva");
-    
+    const estadoOperacion = document.getElementById("estadoOperacion");
 
     idReserva.value = reserva.id;
     editarIdClienteReserva.value = reserva.cliente_id;
@@ -331,8 +333,8 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
     editarPersonasReserva.value = reserva.personas;
 
 
-    botonReserva.addEventListener("click", ()=>{
-        const resultado = modificarReserva(
+    botonReserva.addEventListener("click", async ()=>{
+        const resultado = await modificarReserva(
             idReserva.value,
             editarIdClienteReserva.value,
             editarMesaReserva.value,
@@ -343,19 +345,26 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
             editarTipoReservaSelect.value,
             editarPersonasReserva.value
         );
+        if (resultado){
+            let reservaModificada= {...reserva};
+            reservaModificada.idCliente = editarIdClienteReserva.value;
+            reservaModificada.idMesa = editarMesaReserva.value;
+            reservaModificada.fecha = editarFechaReserva.value;
+            reservaModificada.hora_inicio = editarHoraInicioReserva.value || null;
+            reservaModificada.hora_fin = editarHoraFinReserva.value || null;
+            reservaModificada.estado = editarEstadoReservaSelect.value;
+            reservaModificada.tipo_reserva = editarTipoReservaSelect.value;
+            reservaModificada.personas = editarPersonasReserva.value;
+            estadoOperacion.innerText = "Se ha modificado correctamente";
+            if(!dia) await cargarReservas(reserva.estado, "orr");
+            else await cargarReservasDia(reserva.fecha, " "," " );
+            mostrarPanelEditarReserva(reservaModificada,cliente, dia);
+        }
+        else{
+            estadoOperacion.innerText ="Ha habido un error";
+        }
         
-        let reservaModificada= reserva;
-        reservaModificada.idCliente = editarIdClienteReserva.value;
-        reservaModificada.idMesa = editarMesaReserva.value;
-        reservaModificada.fecha = editarFechaReserva.value;
-        reservaModificada.hora_inicio = editarHoraInicioReserva.value || null;
-        reservaModificada.hora_fin = editarHoraFinReserva.value || null;
-        reservaModificada.estado = editarEstadoReservaSelect.value;
-        reservaModificada.tipo_reserva = editarTipoReservaSelect.value;
-        reservaModificada.personas = editarPersonasReserva.value;
-        mostrarPanelEditarReserva(reservaModificada,cliente);
-        if(!dia) cargarReservas(reserva.estado, "orr");
-        else cargarReservasDia(reserva.fecha, " "," " )
+
         
     })
 }
