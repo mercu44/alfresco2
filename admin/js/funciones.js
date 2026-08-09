@@ -106,6 +106,7 @@ export async function cargarReservasDia(fecha, orden, estado) {
                 new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             );
         }
+        reservas.filter((reserva) => reserva ===estado);
         
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
