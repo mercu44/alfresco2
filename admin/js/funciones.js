@@ -151,6 +151,7 @@ export async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio,
             throw new Error();
         }
         const datos = await resultado.json();
+        console.log("modificar reserva datos: "+datos)
     }catch(error){
         console.error(error);
     }
@@ -200,7 +201,7 @@ export function mostrarPanelCliente(cliente){
         </div>
     `
 }
-export function mostrarPanelEditarReserva(reserva,cliente){
+export function mostrarPanelEditarReserva(reserva,cliente, dia){
     const editarReserva = document.getElementById("panel");
     //let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
 
@@ -353,6 +354,8 @@ export function mostrarPanelEditarReserva(reserva,cliente){
         reservaModificada.tipo_reserva = editarTipoReservaSelect.value;
         reservaModificada.personas = editarPersonasReserva.value;
         mostrarPanelEditarReserva(reservaModificada,cliente);
+        if(!dia) cargarReservas(reserva.estado, "orr");
+        else cargarReservasDia(reserva.fecha, " "," " )
         
     })
 }
@@ -450,7 +453,7 @@ export function crearTarjeta(reserva, cliente, dia, estado, filtro) {
         mostrarPanelCliente(cliente);
     })
     editarReservaPanel.addEventListener("click",()=>{
-        mostrarPanelEditarReserva(reserva,cliente);
+        mostrarPanelEditarReserva(reserva,cliente,dia);
     })
 
     return tarjeta;
