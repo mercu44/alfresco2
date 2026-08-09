@@ -332,12 +332,12 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
     editarTipoReservaSelect.value = reserva.tipo_reserva;
     editarPersonasReserva.value = reserva.personas;
 
-
+    //mesa id da error si no pones nada
     botonReserva.addEventListener("click", async ()=>{
         const resultado = await modificarReserva(
             idReserva.value,
             editarIdClienteReserva.value,
-            editarMesaReserva.value,
+            editarMesaReserva.value || null,
             editarFechaReserva.value,
             editarHoraInicioReserva.value || null,
             editarHoraFinReserva.value || null,
