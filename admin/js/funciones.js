@@ -5,6 +5,7 @@ const API = window.location.hostname === "localhost"
 
 const listaReservas = document.getElementById("listaReservas");
 const numReservas = document.getElementById("numReservas");
+const token = localStorage.getItem("token");
 
 
 export async function cargarReservas(estado, orden) {
