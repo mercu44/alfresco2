@@ -347,8 +347,8 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
         );
         if (resultado){
             let reservaModificada= {...reserva};
-            reservaModificada.idCliente = editarIdClienteReserva.value;
-            reservaModificada.idMesa = editarMesaReserva.value;
+            reservaModificada.cliente_id = editarIdClienteReserva.value;
+            reservaModificada.mesa_id = editarMesaReserva.value;
             reservaModificada.fecha = editarFechaReserva.value;
             reservaModificada.hora_inicio = editarHoraInicioReserva.value || null;
             reservaModificada.hora_fin = editarHoraFinReserva.value || null;
