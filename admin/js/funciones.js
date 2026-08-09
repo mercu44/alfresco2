@@ -151,7 +151,7 @@ export async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio,
             throw new Error();
         }
         const datos = await resultado.json();
-        console.log("modificar reserva datos: "+datos)
+        console.log("modificar reserva datos: "+datos.ok)
     }catch(error){
         console.error(error);
     }
@@ -344,7 +344,7 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
             editarPersonasReserva.value
         );
         
-        reservaModificada= reserva;
+        let reservaModificada= reserva;
         reservaModificada.idCliente = editarIdClienteReserva.value;
         reservaModificada.idMesa = editarMesaReserva.value;
         reservaModificada.fecha = editarFechaReserva.value;
