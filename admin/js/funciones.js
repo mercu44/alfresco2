@@ -365,7 +365,7 @@ export function crearTarjeta(reserva, cliente, dia, estado, filtro) {
     const fecha = new Date(reserva.fecha);
 
     const fechaFormateada = fecha.toLocaleDateString("es-ES");
-
+    const fechaApi = reserva.fecha.slice(0,10);
     const hora = reserva.hora_inicio.slice(0, 5);
 
     let estadoReserva = reserva.estado;
@@ -431,18 +431,18 @@ export function crearTarjeta(reserva, cliente, dia, estado, filtro) {
         await cambiarEstadoReserva(reserva.id,"hecha");
 
         if(!dia)await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fecha, "", "")
+        else await cargarReservasDia(fechaApi, "", "")
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"denegada")
         if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fecha, "", "");
+        else await cargarReservasDia(fechaApi, "", "");
     })
     archivarReserva.addEventListener("click", async()=>{
         await cambiarEstadoReserva(reserva.id, "archivada");
         if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fecha, "", "");
+        else await cargarReservasDia(fechaApi, "", "");
 
     })
 
