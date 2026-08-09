@@ -8,7 +8,7 @@ const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
 const filtroFormulario = document.getElementById("filtroForm");
 const filtroSelect = document.getElementById("filtroSelect")
-let estado = "pendiente";
+let estado = "todas";
 let filtro = "orr";
 
 const diaInput = document.getElementById("diaInput");

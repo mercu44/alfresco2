@@ -85,6 +85,9 @@ export async function cargarReservasDia(fecha, orden, estado) {
         let reservas = await respuesta.json();
         console.log(`Reservas del dia: ${fecha}`)
         console.log(reservas);
+         if (estado !== "todas"){
+            reservas = reservas.filter(({reserva}) => reserva.estado ===estado);
+        }
         
         if(orden==="orr"){
             reservas.sort((a,b) => 
@@ -106,8 +109,7 @@ export async function cargarReservasDia(fecha, orden, estado) {
                 new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             );
         }
-        reservas.filter((reserva) => reserva ===estado);
-        
+       
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
         if (reservas.length === 0) {
