@@ -297,7 +297,10 @@ button:hover{
 }
 
 
-
+#mostrarMesas{
+    background-color: rgb(247, 248, 165);
+    padding: 5px;
+}
 /*=========================================================
     LISTA
 =========================================================*/
@@ -365,10 +368,16 @@ button:hover{
 .pasada{
     background-color: grey;
 }
+.denegada{
+    background-color: var(--red);
+}
 .cancelada{
 
     background:var(--red);
 
+}
+.archivada{
+    background-color: gainsboro;
 }
 
 .espera{

@@ -85,15 +85,15 @@ export async function cargarReservasDia(fecha, orden, estado) {
         let reservas = await respuesta.json();
         console.log(`Reservas del dia: ${fecha}`)
         console.log(reservas);
-        /*
+        
         if(orden==="orr"){
             reservas.sort((a,b) => 
-            new Date(a.reserva.fecha) - new Date(b.reserva.fecha)
+            a.reserva.hora_inicio.localeCompare(b.reserva.hora_inicio)
             );
         }
         else if(orden==="ora"){
             reservas.sort((a,b) => 
-            new Date(b.reserva.fecha) - new Date(a.reserva.fecha)
+            b.reserva.hora_inicio.localeCompare(a.reserva.hora_inicio)
             );
         }
         else if(orden==="ohr"){
@@ -106,10 +106,7 @@ export async function cargarReservasDia(fecha, orden, estado) {
                 new Date(a.reserva.fecha_creacion) - new Date(b.reserva.fecha_creacion)
             );
         }
-        */ 
-        reservas.sort((a, b) =>
-            a.reserva.hora_inicio.localeCompare(b.reserva.hora_inicio)
-        );
+        
         listaReservas.innerHTML = "";
         numReservas.innerHTML = reservas.length + " reservas";
         if (reservas.length === 0) {

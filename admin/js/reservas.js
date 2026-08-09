@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 */
-let estadoS = "pendiente";
+let estado = "pendiente";
 const estadoFormulario = document.getElementById("estadoForm");
 const estadoSelect = document.getElementById("estadoSelect");
 let filtro = "ohr";
@@ -31,14 +31,14 @@ const filtroSelect = document.getElementById("filtroSelect")
 cargarReservas("pendiente", "ohr");
 
 filtroFormulario.addEventListener("change", ()=>{
-    estadoS = estadoSelect.value;
+    estado = estadoSelect.value;
     filtro = filtroSelect.value;
     cargarReservas(estadoS, filtro);
 })
 
 
 estadoFormulario.addEventListener("change", ()=>{
-    estadoS = estadoSelect.value;
+    estado = estadoSelect.value;
     filtro = filtroSelect.value;
     cargarReservas(estadoS,filtro);
 })
