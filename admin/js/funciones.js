@@ -136,7 +136,7 @@ export async function cargarReservasDia(fecha, orden, estado) {
 }
 
 
-export async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
+async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio, horaFin, estado, tipo, personas){
     try{
         const resultado = await fetch((`${API}/reservas/modificarReserva`),{
             method: "PUT",
@@ -157,7 +157,7 @@ export async function modificarReserva(id, idCliente, idMesa, fecha, horaInicio,
 
     }
 }
-export async function cambiarEstadoReserva(id,estado){
+async function cambiarEstadoReserva(id,estado){
     try{
         const resultado = await fetch((`${API}/reservas/cambiarEstadoReserva`),{
             method: "PUT",
@@ -181,28 +181,182 @@ export async function cambiarEstadoReserva(id,estado){
 
 }
 
+async function obtenerEstadisticasCliente(id){
+    try{
+        const resultado = await fetch((`${API}/clientes/${id}`),{
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        if (!resultado.ok) {
+            throw new Error("No se pudieron obtener las estadísticas");
+        }
+        const datos = await resultado.json();
+        return datos;
+    }catch(error){
+        console.error(error);
+        return null;
+    }
 
-
-export function mostrarPanelCliente(cliente){
-    const infoCliente = document.getElementById("panel");
-    infoCliente.innerHTML = ` 
-        <h2>Editar Cliente</h2>
-        <div class="editarContenedor">
-            <p>Id: ${cliente.id}</p>
-            <p>telefono:${cliente.prefijo} ${cliente.telefono}</p>
-            <p>correo: ${cliente.correo}</p>
-            <p>nombre: ${cliente.nombre}</p>
-            <p>nacionalidad: ${cliente.nacionalidad}</p>
-            <p>puntuacion: ${cliente.score}</p>
-            <p>comentariosMios: ${cliente.comentarios}</p>
-            <p>numero cancelaciones</p>
-            <p>numero no-show</p>
-            <p>numero reservas</p>
-            <p>ultima visita</p>
-        </div>
-    `
 }
-export function mostrarPanelEditarReserva(reserva,cliente, dia){
+
+async function mostrarPanelCliente(cliente) {
+    const infoCliente = document.getElementById("panel");
+
+    infoCliente.innerHTML = `
+        <h2>Editar Cliente</h2>
+
+        <div class="editarContenedor">
+            <form class="formEditar">
+
+                <div class="editarItem">
+                    <label>ID</label>
+                    <input
+                        type="text"
+                        id="idCliente"
+                        readonly
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Correo</label>
+                    <input
+                        type="text"
+                        id="editarCorreoCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Teléfono</label>
+                    <input
+                        type="text"
+                        id="editarTelefonoCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Nombre Cliente</label>
+                    <input
+                        type="text"
+                        id="editarNombreClienteCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Nacionalidad</label>
+                    <input
+                        type="text"
+                        id="editarNacionalidadCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Puntuación</label>
+                    <input
+                        type="text"
+                        id="editarPuntuacionCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Comentarios míos</label>
+                    <input
+                        type="text"
+                        id="editarComentariosMiosCliente"
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Número cancelaciones</label>
+                    <input
+                        type="text"
+                        id="numeroCancelacionesCliente"
+                        readonly
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Número no-presentados</label>
+                    <input
+                        type="text"
+                        id="numeroNoPresentadosCliente"
+                        readonly
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Número reservas</label>
+                    <input
+                        type="text"
+                        id="numeroReservasCliente"
+                        readonly
+                    >
+                </div>
+
+                <div class="editarItem">
+                    <label>Última visita</label>
+                    <input
+                        type="text"
+                        id="ultimaVisitaCliente"
+                        readonly
+                    >
+                </div>
+
+                <button type="button" id="btnEditarCliente">
+                    Editar
+                </button>
+
+                <p id="estadoOperacionCliente"></p>
+
+            </form>
+        </div>
+    `;
+
+    const idCliente = document.getElementById("idCliente");
+    const editarCorreoCliente = document.getElementById("editarCorreoCliente");
+    const editarTelefonoCliente = document.getElementById("editarTelefonoCliente");
+    const editarNombreClienteCliente = document.getElementById("editarNombreClienteCliente");
+    const editarNacionalidadCliente = document.getElementById("editarNacionalidadCliente");
+    const editarPuntuacionCliente = document.getElementById("editarPuntuacionCliente");
+    const editarComentariosMiosCliente = document.getElementById("editarComentariosMiosCliente");
+    const numeroCancelacionesCliente = document.getElementById("numeroCancelacionesCliente");
+    const numeroNoPresentadosCliente = document.getElementById("numeroNoPresentadosCliente");
+    const numeroReservasCliente = document.getElementById("numeroReservasCliente");
+    const ultimaVisitaCliente = document.getElementById("ultimaVisitaCliente");
+    const botonCliente = document.getElementById("btnEditarCliente");
+
+
+    idCliente.value = cliente.id ?? "";
+    editarCorreoCliente.value = cliente.correo ?? "";
+    editarTelefonoCliente.value = cliente.telefono ?? "";
+    editarNombreClienteCliente.value = cliente.nombre ?? "";
+    editarNacionalidadCliente.value = cliente.nacionalidad ?? "";
+    editarPuntuacionCliente.value = cliente.puntuacion ?? "";
+    editarComentariosMiosCliente.value = cliente.comentarios_mios ?? "";
+   
+    const estadisticas = await obtenerEstadisticasCliente(cliente.id);
+
+    if (estadisticas) {
+        numeroCancelacionesCliente.value =
+            estadisticas.canceladas ?? 0;
+
+        numeroNoPresentadosCliente.value =
+            estadisticas.no_aparecidas ?? 0;
+
+        numeroReservasCliente.value =
+            estadisticas.total_reservas ?? 0;
+
+        ultimaVisitaCliente.value =
+            estadisticas.ultima_visita ?? "Nunca";
+    } else {
+        numeroCancelacionesCliente.value = 0;
+        numeroNoPresentadosCliente.value = 0;
+        numeroReservasCliente.value = 0;
+        ultimaVisitaCliente.value = "Nunca";
+    }
+
+}
+function mostrarPanelEditarReserva(reserva,cliente, dia){
     const editarReserva = document.getElementById("panel");
     //let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");
 
@@ -372,7 +526,7 @@ export function mostrarPanelEditarReserva(reserva,cliente, dia){
 
 
 
-export function crearTarjeta(reserva, cliente, dia, estado, filtro) {
+function crearTarjeta(reserva, cliente, dia, estado, filtro) {
     
     const fecha = new Date(reserva.fecha);
 
