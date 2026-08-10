@@ -205,6 +205,7 @@ async function modificarCliente(id, telefonoEntero, correo, nombre, nacionalidad
         const telefonoSeparado = telefonoEntero.split(' ');
         const prefijo = telefonoSeparado[0];
         const telefono = telefonoSeparado[1];
+        console.log(`telefono entero: ${telefonoEntero} , prefijo: ${prefijo}, telefono: ${telefono}`)
         const resultado = await fetch((`${API}/clientes/${id}`),{
             method : "PUT",
             headers: {
