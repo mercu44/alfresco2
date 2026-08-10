@@ -376,11 +376,10 @@ async function mostrarPanelCliente(cliente) {
         ultimaVisitaCliente.value = "Nunca";
     }
     botonCliente.addEventListener("click", async () => {
-
         const resultado = await modificarCliente(
             idCliente.value,
-            editarCorreoCliente.value,
             editarTelefonoCliente.value,
+            editarCorreoCliente.value,
             editarNombreClienteCliente.value,
             editarNacionalidadCliente.value,
             editarPuntuacionCliente.value,
