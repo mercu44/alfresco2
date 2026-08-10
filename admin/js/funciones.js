@@ -579,7 +579,7 @@ function crearTarjeta(reserva, cliente, dia, filtro, estado) {
 
     let estadoReserva = reserva.estado;
     console.log(`crear tarjeta: ${reserva.id} : ${cliente.id} : ${estadoReserva}`)
-
+    console.log(`filtro : ${filtro} , estado: ${estado}`)
     const tarjeta = document.createElement("div");
     tarjeta.className = "item-wrapper";
     tarjeta.id = reserva.id;
