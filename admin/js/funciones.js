@@ -200,6 +200,26 @@ async function obtenerEstadisticasCliente(id){
 
 }
 
+async function modificarCliente(id, telefonoEntero, correo, nombre, nacionalidad, score, comentarios){
+    try{
+        const telefonoSeparado = telefonoEntero.split(' ');
+        const prefijo = telefonoSeparado[0];
+        const telefono = telefonoSeparado[1];
+        const resultado = await fetch((`${API}/clientes/${id}`),{
+            method = "PUT",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({id, prefijo, telefono,correo, nombre, nacionalidad, score, comentarios})
+        });
+        if(!resultado.ok){
+            throw new Error();
+        }
+
+    }catch(error){
+        console.error(error);
+    }
+}
 async function mostrarPanelCliente(cliente) {
     const infoCliente = document.getElementById("panel");
 
@@ -303,7 +323,7 @@ async function mostrarPanelCliente(cliente) {
                 </div>
 
                 <button type="button" id="btnEditarCliente">
-                    Editar
+                    Editar Cliente
                 </button>
 
                 <p id="estadoOperacionCliente"></p>
@@ -328,7 +348,7 @@ async function mostrarPanelCliente(cliente) {
 
     idCliente.value = cliente.id ?? "";
     editarCorreoCliente.value = cliente.correo ?? "";
-    editarTelefonoCliente.value = cliente.telefono ?? "";
+    editarTelefonoCliente.value = cliente.prefijo + " "+cliente.telefono ?? "";
     editarNombreClienteCliente.value = cliente.nombre ?? "";
     editarNacionalidadCliente.value = cliente.nacionalidad ?? "";
     editarPuntuacionCliente.value = cliente.puntuacion ?? "";
@@ -354,8 +374,28 @@ async function mostrarPanelCliente(cliente) {
         numeroReservasCliente.value = 0;
         ultimaVisitaCliente.value = "Nunca";
     }
+    botonCliente.addEventListener("click", async () => {
+
+        const resultado = await modificarCliente(
+            idCliente.value,
+            editarCorreoCliente.value,
+            editarTelefonoCliente.value,
+            editarNombreClienteCliente.value,
+            editarNacionalidadCliente.value,
+            editarPuntuacionCliente.value,
+            editarComentariosMiosCliente.value
+        );
+        if (resultado) {
+            document.getElementById("estadoOperacionCliente").innerText =
+                "Se ha modificado correctamente";
+        } else {
+            document.getElementById("estadoOperacionCliente").innerText =
+                "Ha habido un error";
+        }
+    });
 
 }
+
 function mostrarPanelEditarReserva(reserva,cliente, dia){
     const editarReserva = document.getElementById("panel");
     //let fechaFormateada = new Date(reserva.fecha).toLocaleDateString("es-ES");

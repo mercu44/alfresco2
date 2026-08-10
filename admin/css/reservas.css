@@ -313,7 +313,7 @@ button:hover{
 
     gap:14px;
 
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: auto;
     padding-right:  8px;
 }
@@ -927,118 +927,520 @@ hr{
     background:#f7e2b3;
 }
 
-/*=========================================================
+//*=========================================================
     RESPONSIVE
 =========================================================*/
+
 /*=========================================================
     TABLET
 =========================================================*/
 
 @media (max-width: 992px) {
 
-    main{
-        padding:20px;
-        gap:20px;
+    main {
+        padding: 20px;
+        gap: 20px;
     }
 
-    .contenido-principal{
-        padding:20px;
+    /* Contenedores principales */
+    .contenedor {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .item-contenido{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:18px;
+    .sidebar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
     }
 
-    .item-info{
-        width:100%;
-        flex-wrap:wrap;
-        gap:14px;
+    .info-reserva {
+        width: 100%;
+        padding: 20px;
     }
 
-    .acciones{
-        width:100%;
-        flex-direction:row;
-        justify-content:flex-end;
+    .panel {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        padding: 20px;
+    }
+
+    /* Header */
+    .header {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    /* Formulario */
+    .editarContenedor {
+        width: 80%;
+    }
+
+    .item-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .item-info {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .acciones {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    /* Lista reservas */
+    .lista {
+        max-height: 65vh;
+        overflow-y: auto;
+    }
+
+    /* Mesas */
+    .mesas {
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(100px, 1fr)
+        );
+        gap: 20px;
     }
 
 }
+
 
 /*=========================================================
     MÓVIL
 =========================================================*/
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
 
-    main{
-        padding:12px;
+    /*=====================================================
+        GENERAL
+    =====================================================*/
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px;
+        gap: 15px;
+    }
+
+
+    /*=====================================================
+        HEADER
+    =====================================================*/
+
+    .header {
+        width: 100%;
         flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 15px;
     }
 
-    .header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:15px;
+    .header h1 {
+        font-size: 23px;
+        line-height: 1.2;
     }
 
-    .header h1{
-        font-size:24px;
+
+    /*=====================================================
+        CONTENEDORES
+    =====================================================*/
+
+    .contenedor {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .contenido-principal,
-    .sidebar{
-        padding:16px;
-        border-radius:14px;
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        border-radius: 14px;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .item{
-        flex-direction:column;
+    .info-reserva {
+        width: 100%;
+        padding: 15px;
+        border-radius: 14px;
     }
 
-    .estado{
-        width:100%;
-        height:8px;
+    .panel {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 15px;
+        border-radius: 14px;
+
+        display: block;
     }
 
-    .item-contenido{
-        padding:16px;
+
+    /*=====================================================
+        TÍTULOS
+    =====================================================*/
+
+    h1 {
+        font-size: 24px;
     }
 
-    .item-cliente h3{
-        font-size:18px;
+    h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
     }
 
-    .item-info{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-        width:100%;
+    h3 {
+        font-size: 17px;
     }
 
-    .item-info span{
-        width:100%;
-    }
 
-    .acciones{
-        width:100%;
-        flex-direction:row;
-        justify-content:space-between;
-        margin-top:10px;
-    }
-
-    .acciones button{
-        flex:1;
-        height:45px;
-    }
-
-    button{
-        padding:12px 18px;
-    }
+    /*=====================================================
+        INPUTS
+    =====================================================*/
 
     input,
-    select{
-        padding:12px 15px;
+    select {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 14px;
+        border-radius: 11px;
+    }
+
+
+    /*=====================================================
+        FORMULARIO EDITAR CLIENTE
+    =====================================================*/
+
+    .editarContenedor {
+        width: 100%;
+    }
+
+    .formEditar {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .formEditar input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .editarItem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .editarItem label {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+
+    /*=====================================================
+        BOTONES
+    =====================================================*/
+
+    button {
+        width: 100%;
+        min-height: 44px;
+        padding: 11px 16px;
+        font-size: 14px;
+        border-radius: 11px;
+    }
+
+
+    /*=====================================================
+        LISTA DE RESERVAS
+    =====================================================*/
+
+    .lista {
+        width: 100%;
+        max-height: 65vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        gap: 10px;
+        padding-right: 5px;
+    }
+
+
+    /*=====================================================
+        TARJETA RESERVA
+    =====================================================*/
+
+    .item {
+        width: 100%;
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 12px;
+    }
+
+
+    /* Barra de estado */
+    .estado {
+        width: 100%;
+        height: 7px;
+        min-height: 7px;
+
+        align-self: auto;
+    }
+
+
+    /*=====================================================
+        CONTENIDO RESERVA
+    =====================================================*/
+
+    .item-contenido {
+        width: 100%;
+        padding: 14px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 14px;
+    }
+
+
+    /* Cliente */
+    .item-cliente {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .item-cliente h3 {
+        font-size: 17px;
+        line-height: 1.2;
+    }
+
+    .item-cliente span {
+        font-size: 13px;
+    }
+
+
+    /*=====================================================
+        INFORMACIÓN RESERVA
+    =====================================================*/
+
+    .item-info {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .item-info span {
+        width: 100%;
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+    .item-info i {
+        margin-right: 5px;
+    }
+
+
+    /*=====================================================
+        BADGES
+    =====================================================*/
+
+    .badge {
+        width: fit-content;
+        max-width: 100%;
+
+        padding: 5px 10px;
+        font-size: 12px;
+
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /*=====================================================
+        ACCIONES
+    =====================================================*/
+
+    .acciones {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+
+        justify-content: stretch;
+        gap: 8px;
+
+        margin-top: 5px;
+    }
+
+    .acciones button {
+        flex: 1;
+
+        width: auto;
+        height: 44px;
+        min-height: 44px;
+
+        padding: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /*=====================================================
+        SUBMENÚ
+    =====================================================*/
+
+    .submenu {
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-left: 0;
+        padding: 12px;
+
+        border-radius: 0 0 10px 10px;
+    }
+
+    .item-wrapper:hover .submenu {
+        display: flex;
+    }
+
+    .btnSubmenu {
+        width: 100%;
+        min-height: 42px;
+    }
+
+
+    /*=====================================================
+        FILAS / COLUMNAS
+    =====================================================*/
+
+    .fila {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .columna {
+        width: 100%;
+        gap: 10px;
+    }
+
+
+    /*=====================================================
+        MESAS
+    =====================================================*/
+
+    .mesas {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(80px, 1fr)
+        );
+
+        gap: 12px;
+    }
+
+    .mesa {
+        width: 80px;
+        height: 80px;
+
+        margin: auto;
+
+        border-radius: 18px;
+        font-size: 13px;
+    }
+
+
+    /*=====================================================
+        TARJETAS
+    =====================================================*/
+
+    .card {
+        width: 100%;
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+
+    /*=====================================================
+        ICONOS
+    =====================================================*/
+
+    .icono {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+    }
+
+
+    /*=====================================================
+        MAPA
+    =====================================================*/
+
+    /*
+        El mapa tiene 700px de ancho.
+        En móvil no intentamos reducirlo porque
+        romperíamos las posiciones de las mesas.
+
+        En su lugar permitimos scroll horizontal.
+    */
+
+    .mapa {
+        width: 700px;
+        max-width: none;
+        height: 900px;
+    }
+
+    /*
+        El contenedor del mapa debe permitir
+        desplazamiento horizontal.
+    */
+
+    .contenedor-mapa {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
 }
