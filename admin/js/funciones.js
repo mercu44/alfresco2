@@ -217,9 +217,11 @@ async function modificarCliente(id, telefonoEntero, correo, nombre, nacionalidad
         if(!resultado.ok){
             throw new Error();
         }
+        else return true;
 
     }catch(error){
         console.error(error);
+        return false;
     }
 }
 async function mostrarPanelCliente(cliente) {
@@ -386,7 +388,7 @@ async function mostrarPanelCliente(cliente) {
             editarPuntuacionCliente.value,
             editarComentariosMiosCliente.value
         );
-        if (resultado.ok) {
+        if (resultado) {
             document.getElementById("estadoOperacionCliente").innerText =
                 "Se ha modificado correctamente";
         } else {
