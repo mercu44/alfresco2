@@ -33,7 +33,7 @@ cargarReservas("pendiente", "ohr");
 filtroFormulario.addEventListener("change", ()=>{
     estado = estadoSelect.value;
     filtro = filtroSelect.value;
-    cargarReservas(estadoS, filtro);
+    cargarReservas(estado, filtro);
 })
 
 

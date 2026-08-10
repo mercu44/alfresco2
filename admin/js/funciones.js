@@ -640,18 +640,18 @@ function crearTarjeta(reserva, cliente, dia, estado, filtro) {
         await cambiarEstadoReserva(reserva.id,"hecha");
 
         if(!dia)await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi, "", "")
+        else await cargarReservasDia(fechaApi, estado, filtro)
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"denegada")
         if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi, "", "");
+        else await cargarReservasDia(fechaApi,estado, filtro);
     })
     archivarReserva.addEventListener("click", async()=>{
         await cambiarEstadoReserva(reserva.id, "archivada");
         if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi, "", "");
+        else await cargarReservasDia(fechaApi, estado, filtro);
 
     })
 
