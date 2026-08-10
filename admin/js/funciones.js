@@ -206,7 +206,7 @@ async function modificarCliente(id, telefonoEntero, correo, nombre, nacionalidad
         const prefijo = telefonoSeparado[0];
         const telefono = telefonoSeparado[1];
         const resultado = await fetch((`${API}/clientes/${id}`),{
-            method = "PUT",
+            method : "PUT",
             headers: {
                 Authorization: `Bearer ${token}`
             },
