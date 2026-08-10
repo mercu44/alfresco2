@@ -211,7 +211,7 @@ async function modificarCliente(id, telefonoEntero, correo, nombre, nacionalidad
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            body: JSON.stringify({id, prefijo, telefono,correo, nombre, nacionalidad, score, comentarios})
+            body: JSON.stringify({id,telefono,prefijo,correo, nombre, nacionalidad, score, comentarios})
         });
         if(!resultado.ok){
             throw new Error();
