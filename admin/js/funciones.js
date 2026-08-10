@@ -8,7 +8,7 @@ const numReservas = document.getElementById("numReservas");
 const token = localStorage.getItem("token");
 
 
-export async function cargarReservas(estado, orden) {
+export async function cargarReservas(orden, estado) {
     try {
         const respuesta = await fetch(`${API}/reservas?estado=${estado}`, {
             headers: {
@@ -553,8 +553,8 @@ function mostrarPanelEditarReserva(reserva,cliente, dia){
             reservaModificada.tipo_reserva = editarTipoReservaSelect.value;
             reservaModificada.personas = editarPersonasReserva.value;
             estadoOperacion.innerText = "Se ha modificado correctamente";
-            if(!dia) await cargarReservas(reserva.estado, "orr");
-            else await cargarReservasDia(reserva.fecha, " "," " );
+            if(!dia) await cargarReservas( "orr", reserva.estado,);
+            else await cargarReservasDia(reserva.fecha, "orr","todas" );
             mostrarPanelEditarReserva(reservaModificada,cliente, dia);
         }
         else{
@@ -569,7 +569,7 @@ function mostrarPanelEditarReserva(reserva,cliente, dia){
 
 
 
-function crearTarjeta(reserva, cliente, dia, estado, filtro) {
+function crearTarjeta(reserva, cliente, dia, filtro, estado) {
     
     const fecha = new Date(reserva.fecha);
 
@@ -639,19 +639,19 @@ function crearTarjeta(reserva, cliente, dia, estado, filtro) {
     aceptarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"hecha");
 
-        if(!dia)await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi, estado, filtro)
+        if(!dia)await cargarReservas(filtro, estado );
+        else await cargarReservasDia(fechaApi, filtro, estado)
 
     })
     rechazarReserva.addEventListener("click", async ()=>{
         await cambiarEstadoReserva(reserva.id,"denegada")
-        if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi,estado, filtro);
+        if(!dia) await cargarReservas(filtro, estado );
+        else await cargarReservasDia(fechaApi, filtro , estado);
     })
     archivarReserva.addEventListener("click", async()=>{
         await cambiarEstadoReserva(reserva.id, "archivada");
-        if(!dia) await cargarReservas(estado, filtro);
-        else await cargarReservasDia(fechaApi, estado, filtro);
+        if(!dia) await cargarReservas(filtro, estado );
+        else await cargarReservasDia(fechaApi, filtro, estado);
 
     })
 

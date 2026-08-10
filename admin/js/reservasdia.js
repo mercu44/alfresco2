@@ -29,7 +29,7 @@ filtroFormulario.addEventListener("change", ()=>{
 estadoFormulario.addEventListener("change", ()=>{
     estado = estadoSelect.value;
     filtro = filtroSelect.value;
-        cargarReservasDia(diaInput.value, filtro,estado);
+    cargarReservasDia(diaInput.value, filtro,estado);
 
 })
 

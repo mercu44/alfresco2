@@ -28,19 +28,19 @@ const filtroFormulario = document.getElementById("filtroForm");
 const filtroSelect = document.getElementById("filtroSelect")
 
 
-cargarReservas("pendiente", "ohr");
+cargarReservas("ohr", "pendiente");
 
 filtroFormulario.addEventListener("change", ()=>{
     estado = estadoSelect.value;
     filtro = filtroSelect.value;
-    cargarReservas(estado, filtro);
+    cargarReservas(filtro, estado );
 })
 
 
 estadoFormulario.addEventListener("change", ()=>{
     estado = estadoSelect.value;
     filtro = filtroSelect.value;
-    cargarReservas(estadoS,filtro);
+    cargarReservas(filtro, estado);
 })
 
 
