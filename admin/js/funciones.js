@@ -353,8 +353,8 @@ async function mostrarPanelCliente(cliente) {
     editarTelefonoCliente.value = cliente.prefijo + " "+cliente.telefono ?? "";
     editarNombreClienteCliente.value = cliente.nombre ?? "";
     editarNacionalidadCliente.value = cliente.nacionalidad ?? "";
-    editarPuntuacionCliente.value = cliente.puntuacion ?? "";
-    editarComentariosMiosCliente.value = cliente.comentarios_mios ?? "";
+    editarPuntuacionCliente.value = cliente.score ?? "";
+    editarComentariosMiosCliente.value = cliente.comentarios ?? "";
    
     const estadisticas = await obtenerEstadisticasCliente(cliente.id);
 
