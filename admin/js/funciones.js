@@ -56,7 +56,7 @@ export async function cargarReservas(orden, estado) {
             return;
         }
         reservas.forEach(({ reserva, cliente }) => {
-            listaReservas.appendChild(crearTarjeta(reserva, cliente, false, estado, orden));
+            listaReservas.appendChild(crearTarjeta(reserva, cliente, false, orden,estado));
         });
 
     } catch (error) {
@@ -121,7 +121,7 @@ export async function cargarReservasDia(fecha, orden, estado) {
             return;
         }
         reservas.forEach(({ reserva, cliente }) => {
-            listaReservas.appendChild(crearTarjeta(reserva, cliente,true, estado,orden));
+            listaReservas.appendChild(crearTarjeta(reserva, cliente,true,orden,estado));
         });
 
     } catch (error) {
