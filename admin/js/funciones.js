@@ -386,7 +386,7 @@ async function mostrarPanelCliente(cliente) {
             editarPuntuacionCliente.value,
             editarComentariosMiosCliente.value
         );
-        if (resultado) {
+        if (resultado.ok) {
             document.getElementById("estadoOperacionCliente").innerText =
                 "Se ha modificado correctamente";
         } else {
