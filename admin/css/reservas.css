@@ -313,6 +313,9 @@ button:hover{
 
     gap:14px;
 
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right:  8px;
 }
 
 
